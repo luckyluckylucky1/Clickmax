@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,800&amp;display=swap');
+      .cm-text { font-family: 'Newsreader', Georgia, serif; font-weight: 800; font-style: italic; }
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#4F46E5"/>
+  <rect x="28" y="12" width="24" height="40" rx="8" fill="#FF5A45"/>
+  <text x="40" y="32"
+        class="cm-text"
+        font-size="9"
+        letter-spacing="-0.3"
+        fill="#4F46E5"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        transform="rotate(90 40 32)">clickmax</text>
+</svg>
