@@ -10,13 +10,13 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,wght@1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,wght@1,800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Bebas+Neue&family=Archivo+Black&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="nav">
-  <div class="wrap nav-inner">
+  <div class="nav-inner">
     <a href="index.html" class="logo">
       <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#4F46E5"/><rect x="28" y="12" width="24" height="40" rx="8" fill="#FF5A45"/><text x="40" y="32" font-family="Newsreader, Georgia, serif" font-weight="800" font-style="italic" font-size="9" letter-spacing="-0.3" fill="#4F46E5" text-anchor="middle" dominant-baseline="middle" transform="rotate(90 40 32)">clickmax</text></svg>
       <span class="logo-text">Clickmax</span>
@@ -61,87 +61,429 @@
       <div class="hero-showcase" aria-hidden="true">
         <div class="showcase-frame">
           <div class="showcase-chrome">
-            <span></span><span></span><span></span>
             <div class="showcase-url">clickmax.com.au</div>
+            <div class="showcase-window">
+              <span class="showcase-min">_</span>
+              <span class="showcase-close">×</span>
+            </div>
           </div>
           <div class="showcase-viewport">
             <div class="showcase-track">
-              <!-- Mock site 1 - Medical -->
-              <div class="mock mock-medical">
-                <div class="mock-nav"><div class="mock-logo"></div><div class="mock-menu"><span></span><span></span><span></span></div></div>
-                <div class="mock-hero">
-                  <div class="mock-tag"></div>
-                  <div class="mock-h1"></div>
-                  <div class="mock-h1 short"></div>
-                  <div class="mock-p"></div>
-                  <div class="mock-p short"></div>
-                  <div class="mock-btn"></div>
-                </div>
-                <div class="mock-cards">
-                  <div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div>
-                </div>
-              </div>
-              <!-- Mock site 2 - Beauty -->
-              <div class="mock mock-beauty">
-                <div class="mock-nav"><div class="mock-logo"></div><div class="mock-menu"><span></span><span></span><span></span></div></div>
-                <div class="mock-hero center">
-                  <div class="mock-h1"></div>
-                  <div class="mock-h1 short"></div>
-                  <div class="mock-p"></div>
-                  <div class="mock-btn"></div>
-                </div>
-                <div class="mock-gallery">
-                  <div></div><div></div><div></div><div></div>
-                </div>
-              </div>
-              <!-- Mock site 3 - SaaS -->
-              <div class="mock mock-saas">
-                <div class="mock-nav"><div class="mock-logo"></div><div class="mock-menu"><span></span><span></span><span></span></div></div>
-                <div class="mock-hero split">
-                  <div class="mock-hero-left">
-                    <div class="mock-tag"></div>
-                    <div class="mock-h1"></div>
-                    <div class="mock-h1 short"></div>
-                    <div class="mock-p"></div>
-                    <div class="mock-btn"></div>
+
+              <!-- 1. Carpenter — polished tradie / construction company -->
+              <div class="mock mock-carpenter">
+                <div class="carpenter-topbar">
+                  <div class="carpenter-tb-left">
+                    <span>📍 Brunswick &amp; surrounds</span>
+                    <span class="carpenter-tb-divider"></span>
+                    <span>🛠 Licensed builder #L8473</span>
                   </div>
-                  <div class="mock-hero-right">
-                    <div class="mock-dashboard">
-                      <div class="mock-chart"></div>
-                      <div class="mock-bars"><span></span><span></span><span></span><span></span></div>
+                  <div class="carpenter-tb-right">
+                    <strong>📞 0412 987 334</strong>
+                  </div>
+                </div>
+                <div class="carpenter-nav">
+                  <div class="carpenter-logo-v2">
+                    <div class="carpenter-logo-mark">O&amp;S</div>
+                    <div class="carpenter-logo-text">
+                      <strong>OAK &amp; STEEL</strong>
+                      <span>CARPENTRY · JOINERY · BUILDS</span>
+                    </div>
+                  </div>
+                  <div class="carpenter-nav-links">
+                    <span>Home</span>
+                    <span>Services</span>
+                    <span>Portfolio</span>
+                    <span>Reviews</span>
+                    <span class="carpenter-nav-cta">Free Quote →</span>
+                  </div>
+                </div>
+                <div class="carpenter-hero-v2">
+                  <div class="carpenter-photo-v2" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&q=80&auto=format&fit=crop');"></div>
+                  <div class="carpenter-hero-overlay-v2"></div>
+                  <div class="carpenter-hero-content">
+                    <div class="carpenter-badge">★★★★★ 4.9 · 180+ REVIEWS</div>
+                    <div class="carpenter-headline-v2">Built properly.<br>Built to last.</div>
+                    <div class="carpenter-sub-v2">Custom kitchens, wardrobes, decking &amp; renovations across Melbourne's north. Fully licensed, fully insured, 10-year workmanship guarantee.</div>
+                    <div class="carpenter-cta-row">
+                      <div class="m-btn carpenter-cta-primary">Get a free quote</div>
+                      <div class="m-btn carpenter-cta-ghost">View our work →</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carpenter-footer">
+                  <div class="carpenter-footer-photo" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80&auto=format&fit=crop');"></div>
+                  <div class="carpenter-footer-reviews">
+                    <div class="carpenter-review">
+                      <div class="carpenter-review-stars">★★★★★</div>
+                      <p>"Absolute legends. New kitchen came up a treat, on time and on budget."</p>
+                      <span>— Mark K., Brunswick</span>
+                    </div>
+                    <div class="carpenter-review">
+                      <div class="carpenter-review-stars">★★★★★</div>
+                      <p>"Best tradies we've had in the house. Clean, on-time, quality work."</p>
+                      <span>— Sarah T., Coburg</span>
+                    </div>
+                  </div>
+                  <div class="carpenter-footer-cta">
+                    <div class="carpenter-footer-cta-title">Need a quote?</div>
+                    <div class="carpenter-footer-cta-phone">📞 0412 987 334</div>
+                    <div class="carpenter-footer-cta-btn">Contact us now →</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mock-divider"></div>
+
+              <!-- 2. Medical Clinic — centered wellness brand -->
+              <div class="mock mock-clinic">
+                <div class="clinic-nav-v2">
+                  <span>Services</span>
+                  <div class="clinic-logo-center"><span class="clinic-cross">+</span> Meridian</div>
+                  <span>Book →</span>
+                </div>
+                <div class="clinic-hero-v2">
+                  <div class="clinic-eyebrow-v2">FAMILY MEDICINE · RICHMOND</div>
+                  <h1 class="clinic-headline-v2">Care that feels<br><em>personal.</em></h1>
+                  <p class="clinic-sub-v2">Bulk-billed family GPs, allied health, and specialists — under one roof, seven days a week.</p>
+                  <div class="clinic-cta-row">
+                    <div class="m-btn teal">Book online</div>
+                    <div class="clinic-phone">or call <strong>(03) 9421 8800</strong></div>
+                  </div>
+                </div>
+                <div class="clinic-doctors">
+                  <div class="clinic-doctors-head">
+                    <div class="clinic-doctors-title">Meet our doctors</div>
+                    <div class="clinic-doctors-sub">7 GPs · bulk-billed · accepting new patients</div>
+                  </div>
+                  <div class="clinic-doctors-list">
+                    <div class="clinic-doctor">
+                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&q=75&auto=format&fit=crop');"></div>
+                      <div class="clinic-doctor-info">
+                        <strong>Dr. Priya Nair</strong>
+                        <span>Family GP · Women's health</span>
+                      </div>
+                    </div>
+                    <div class="clinic-doctor">
+                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&q=75&auto=format&fit=crop');"></div>
+                      <div class="clinic-doctor-info">
+                        <strong>Dr. James O'Connor</strong>
+                        <span>Family GP · Paediatrics</span>
+                      </div>
+                    </div>
+                    <div class="clinic-doctor">
+                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=120&q=75&auto=format&fit=crop');"></div>
+                      <div class="clinic-doctor-info">
+                        <strong>Dr. Mei Zhang</strong>
+                        <span>Skin &amp; mental health</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clinic-doctors-cta-wrap">
+                    <div class="clinic-doctors-cta">Book with a GP →</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mock-divider dark"></div>
+
+              <!-- 3. Restaurant — cinematic full-bleed -->
+              <div class="mock mock-restaurant">
+                <div class="resto-nav">
+                  <div class="m-logo resto-logo">Nonna's</div>
+                  <div class="m-nav-links resto-links"><span>Menu</span><span>Wine List</span><span>Reserve</span></div>
+                </div>
+                <div class="mock-hero-resto">
+                  <div class="resto-photo" style="background-image: url('https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=700&q=80&auto=format&fit=crop');"></div>
+                  <div class="resto-overlay"></div>
+                  <div class="resto-headline">
+                    <div class="m-eyebrow resto">FITZROY · DINNER WED–SUN</div>
+                    <div class="m-headline resto"><em>Cucina</em><br>italiana.</div>
+                    <div class="m-sub resto">Handmade pasta, wood-fired pizza, and a natural wine list.</div>
+                    <div class="m-btn cream">Reserve a table →</div>
+                  </div>
+                  <div class="resto-stars">
+                    <span>★★★★★</span>
+                    <span class="resto-stars-text">"One of Fitzroy's finest" — The Age</span>
+                  </div>
+                </div>
+                <div class="resto-menu-strip">
+                  <div class="resto-menu-item"><span>Antipasti</span><strong>from $14</strong></div>
+                  <div class="resto-menu-item"><span>Primi</span><strong>from $22</strong></div>
+                  <div class="resto-menu-item"><span>Secondi</span><strong>from $34</strong></div>
+                  <div class="resto-menu-item"><span>Dolci</span><strong>from $12</strong></div>
+                </div>
+              </div>
+
+              <div class="mock-divider"></div>
+
+              <!-- 4. Electrician — polished tradie with real imagery -->
+              <div class="mock mock-electric">
+                <div class="electric-nav-v2">
+                  <div class="m-logo electric-logo"><span class="bolt">⚡</span> VOLT CO</div>
+                  <div class="electric-phone-header">
+                    <span class="electric-live-dot"></span>
+                    <span>Available now</span>
+                    <strong>1300 86 5800</strong>
+                  </div>
+                </div>
+                <div class="electric-hero-v3">
+                  <div class="electric-photo-bg" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80&auto=format&fit=crop');"></div>
+                  <div class="electric-photo-overlay"></div>
+                  <div class="electric-hero-content">
+                    <div class="electric-badge">⚡ 24/7 EMERGENCY CALLOUTS</div>
+                    <div class="electric-headline-v2">Power done<br>properly.</div>
+                    <div class="electric-sub-v2">Melbourne's trusted electricians since 2009. Residential, commercial &amp; industrial — fast response, upfront pricing.</div>
+                    <div class="electric-ctas-v2">
+                      <div class="m-btn yellow">Call now — 1300 86 5800</div>
+                      <div class="m-btn ghost-light">Get a quote</div>
+                    </div>
+                    <div class="electric-trust">
+                      <span><span class="electric-check">✓</span> Licensed Level 2</span>
+                      <span><span class="electric-check">✓</span> Fully insured</span>
+                      <span><span class="electric-check">✓</span> 10yr warranty</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="electric-review-card">
+                  <div class="electric-review-left">
+                    <div class="electric-review-stars">★★★★★</div>
+                    <div class="electric-review-source">Google Reviews</div>
+                  </div>
+                  <div class="electric-review-quote">
+                    <p>"Called at 9pm with a dead fuse box — tech was at our door within 40 minutes. Fixed it clean and the price was exactly what he quoted. Will use VOLT again."</p>
+                    <span>— David M., Thornbury · 3 days ago</span>
+                  </div>
+                  <div class="electric-review-score">
+                    <strong>4.9</strong>
+                    <span>out of 5</span>
+                    <small>410+ reviews</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mock-divider"></div>
+
+              <!-- 5. E-commerce — shop browsing layout -->
+              <div class="mock mock-ecom">
+                <div class="ecom-nav-v2">
+                  <div class="ecom-nav-left">
+                    <span>Women</span>
+                    <span>Men</span>
+                    <span>New In</span>
+                  </div>
+                  <div class="m-logo ecom-logo">MAVEN</div>
+                  <div class="ecom-nav-right">
+                    <span>Search</span>
+                    <span>Account</span>
+                    <span>Bag (2)</span>
+                  </div>
+                </div>
+                <div class="ecom-featured-bar">
+                  <span>AUTUMN '26 IS HERE</span>
+                  <span class="ecom-dot"></span>
+                  <span>Free shipping over $150</span>
+                  <span class="ecom-dot"></span>
+                  <span>Easy returns</span>
+                </div>
+                <div class="ecom-shop-grid">
+                  <div class="ecom-feature-card">
+                    <div class="ecom-feature-photo" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80&auto=format&fit=crop');"></div>
+                    <div class="ecom-feature-label">
+                      <div class="ecom-feature-eyebrow">THE LOOKBOOK</div>
+                      <div class="ecom-feature-title"><em>Softer,</em> always.</div>
+                      <div class="m-btn black">Shop the drop →</div>
+                    </div>
+                  </div>
+                  <div class="ecom-products-col">
+                    <div class="ecom-small-product">
+                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&q=75&auto=format&fit=crop');"></div>
+                      <div class="ecom-small-info">
+                        <strong>Merino knit</strong>
+                        <span>$180 · 4 colours</span>
+                      </div>
+                    </div>
+                    <div class="ecom-small-product">
+                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&q=75&auto=format&fit=crop');"></div>
+                      <div class="ecom-small-info">
+                        <strong>Wool overcoat</strong>
+                        <span>$245 · 3 colours</span>
+                      </div>
+                    </div>
+                    <div class="ecom-small-product">
+                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&q=75&auto=format&fit=crop');"></div>
+                      <div class="ecom-small-info">
+                        <strong>Leather tote</strong>
+                        <span>$320 · 2 colours</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- Mock site 4 - Tradie -->
-              <div class="mock mock-tradie">
-                <div class="mock-nav dark"><div class="mock-logo"></div><div class="mock-menu"><span></span><span></span><span></span></div></div>
-                <div class="mock-hero dark">
-                  <div class="mock-tag"></div>
-                  <div class="mock-h1"></div>
-                  <div class="mock-h1 short"></div>
-                  <div class="mock-p"></div>
-                  <div class="mock-btn"></div>
-                </div>
-                <div class="mock-services">
-                  <div class="mock-service"></div><div class="mock-service"></div>
+
+              <div class="mock-divider"></div>
+
+              <!-- 6. Architecture — magazine spread with side nav -->
+              <div class="mock mock-arch">
+                <div class="arch-layout">
+                  <div class="arch-sidebar">
+                    <div class="arch-logo-stack">
+                      <div>BLANC</div>
+                      <div>/ LE</div>
+                      <div class="arch-reg-line">Architects ®</div>
+                    </div>
+                    <div class="arch-side-nav">
+                      <div class="arch-side-item active">Projects</div>
+                      <div class="arch-side-item">Studio</div>
+                      <div class="arch-side-item">Press</div>
+                      <div class="arch-side-item">Contact</div>
+                    </div>
+                    <div class="arch-side-footer">
+                      <div>EST. 2011</div>
+                      <div>MELBOURNE</div>
+                    </div>
+                  </div>
+                  <div class="arch-main">
+                    <div class="arch-main-photo" style="background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=80&auto=format&fit=crop');">
+                      <div class="arch-photo-tag">
+                        <span>01 / 24</span>
+                      </div>
+                    </div>
+                    <div class="arch-main-text">
+                      <div class="arch-project-number">— Project N°24</div>
+                      <h1 class="arch-main-title"><em>The Gertrude</em></h1>
+                      <div class="arch-meta-row">
+                        <div><span>Location</span><strong>Fitzroy, VIC</strong></div>
+                        <div><span>Completed</span><strong>2025</strong></div>
+                        <div><span>Type</span><strong>Residential</strong></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!-- Duplicate for seamless loop -->
-              <div class="mock mock-medical">
-                <div class="mock-nav"><div class="mock-logo"></div><div class="mock-menu"><span></span><span></span><span></span></div></div>
-                <div class="mock-hero">
-                  <div class="mock-tag"></div>
-                  <div class="mock-h1"></div>
-                  <div class="mock-h1 short"></div>
-                  <div class="mock-p"></div>
-                  <div class="mock-p short"></div>
-                  <div class="mock-btn"></div>
+
+              <div class="mock-divider"></div>
+
+              <!-- 7. SaaS — dashboard hero dominant -->
+              <div class="mock mock-saas-new">
+                <div class="mock-nav saas-nav">
+                  <div class="m-logo saas-logo"><span class="saas-dot"></span> Flowstate</div>
+                  <div class="m-nav-links saas-links"><span>Product</span><span>Docs</span><span>Pricing</span><span>Login</span><span class="saas-cta">Try free →</span></div>
                 </div>
-                <div class="mock-cards">
-                  <div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div>
+                <div class="saas-hero-v2">
+                  <div class="saas-hero-top">
+                    <div class="saas-badge">✦ New — AI-native</div>
+                    <h1 class="saas-headline-v2">The workspace that <em>thinks ahead.</em></h1>
+                    <p class="saas-sub-v2">Plans sprints, writes updates, tracks shipping — built for teams that ship.</p>
+                    <div class="saas-hero-ctas-v2">
+                      <div class="m-btn indigo">Start for free</div>
+                      <div class="saas-secondary">Watch demo · 90 sec</div>
+                    </div>
+                  </div>
+                  <div class="saas-dashboard-big">
+                    <div class="saas-dash-sidebar">
+                      <div class="saas-dash-side-item active">● Overview</div>
+                      <div class="saas-dash-side-item">◉ Projects</div>
+                      <div class="saas-dash-side-item">◎ Team</div>
+                      <div class="saas-dash-side-item">◌ Reports</div>
+                    </div>
+                    <div class="saas-dash-main">
+                      <div class="saas-dash-statrow">
+                        <div class="saas-dash-stat">
+                          <span>This week</span>
+                          <strong>128</strong>
+                          <small class="saas-up">↑ 12%</small>
+                        </div>
+                        <div class="saas-dash-stat">
+                          <span>Shipped</span>
+                          <strong>42</strong>
+                          <small class="saas-up">↑ 8%</small>
+                        </div>
+                        <div class="saas-dash-stat">
+                          <span>In review</span>
+                          <strong>7</strong>
+                          <small class="saas-flat">—</small>
+                        </div>
+                      </div>
+                      <div class="saas-chart">
+                        <div class="saas-chart-bar b1"></div>
+                        <div class="saas-chart-bar b2"></div>
+                        <div class="saas-chart-bar b3"></div>
+                        <div class="saas-chart-bar b4"></div>
+                        <div class="saas-chart-bar b5"></div>
+                        <div class="saas-chart-bar b6"></div>
+                        <div class="saas-chart-bar b7"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <div class="mock-divider"></div>
+
+              <!-- Duplicate first for seamless loop -->
+              <div class="mock mock-carpenter">
+                <div class="carpenter-topbar">
+                  <div class="carpenter-tb-left">
+                    <span>📍 Brunswick &amp; surrounds</span>
+                    <span class="carpenter-tb-divider"></span>
+                    <span>🛠 Licensed builder #L8473</span>
+                  </div>
+                  <div class="carpenter-tb-right">
+                    <strong>📞 0412 987 334</strong>
+                  </div>
+                </div>
+                <div class="carpenter-nav">
+                  <div class="carpenter-logo-v2">
+                    <div class="carpenter-logo-mark">O&amp;S</div>
+                    <div class="carpenter-logo-text">
+                      <strong>OAK &amp; STEEL</strong>
+                      <span>CARPENTRY · JOINERY · BUILDS</span>
+                    </div>
+                  </div>
+                  <div class="carpenter-nav-links">
+                    <span>Home</span>
+                    <span>Services</span>
+                    <span>Portfolio</span>
+                    <span>Reviews</span>
+                    <span class="carpenter-nav-cta">Free Quote →</span>
+                  </div>
+                </div>
+                <div class="carpenter-hero-v2">
+                  <div class="carpenter-photo-v2" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&q=80&auto=format&fit=crop');"></div>
+                  <div class="carpenter-hero-overlay-v2"></div>
+                  <div class="carpenter-hero-content">
+                    <div class="carpenter-badge">★★★★★ 4.9 · 180+ REVIEWS</div>
+                    <div class="carpenter-headline-v2">Built properly.<br>Built to last.</div>
+                    <div class="carpenter-sub-v2">Custom kitchens, wardrobes, decking &amp; renovations across Melbourne's north. Fully licensed, fully insured, 10-year workmanship guarantee.</div>
+                    <div class="carpenter-cta-row">
+                      <div class="m-btn carpenter-cta-primary">Get a free quote</div>
+                      <div class="m-btn carpenter-cta-ghost">View our work →</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carpenter-footer">
+                  <div class="carpenter-footer-photo" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80&auto=format&fit=crop');"></div>
+                  <div class="carpenter-footer-reviews">
+                    <div class="carpenter-review">
+                      <div class="carpenter-review-stars">★★★★★</div>
+                      <p>"Absolute legends. New kitchen came up a treat, on time and on budget."</p>
+                      <span>— Mark K., Brunswick</span>
+                    </div>
+                    <div class="carpenter-review">
+                      <div class="carpenter-review-stars">★★★★★</div>
+                      <p>"Best tradies we've had in the house. Clean, on-time, quality work."</p>
+                      <span>— Sarah T., Coburg</span>
+                    </div>
+                  </div>
+                  <div class="carpenter-footer-cta">
+                    <div class="carpenter-footer-cta-title">Need a quote?</div>
+                    <div class="carpenter-footer-cta-phone">📞 0412 987 334</div>
+                    <div class="carpenter-footer-cta-btn">Contact us now →</div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
