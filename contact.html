@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Clickmax</title>
+<meta name="description" content="Tell us about your project. We reply within 24 hours, Monday to Friday.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@1,800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Archivo+Black&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#4F46E5"/><rect x="28" y="12" width="24" height="40" rx="8" fill="#FF5A45"/><text x="40" y="32" font-family="Newsreader, Georgia, serif" font-weight="800" font-style="italic" font-size="9" letter-spacing="-0.3" fill="#4F46E5" text-anchor="middle" dominant-baseline="middle" transform="rotate(90 40 32)">clickmax</text></svg>
+      <span class="logo-text">Clickmax</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary nav-cta">Start a project</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero contact-hero">
+    <div class="wrap">
+      <h1 class="page-title">
+        Let's talk<br>
+        <em>about your site.</em>
+      </h1>
+      <p class="page-lede">
+        Tell us a bit about your business and what you're after. We'll reply within 24 hours, Monday to Friday — usually much sooner.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="wrap contact-grid">
+
+      <div class="contact-form-wrap">
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New Clickmax project enquiry">
+          <input type="hidden" name="from_name" value="Clickmax Contact Form">
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith">
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@yourbusiness.com.au">
+          </div>
+
+          <div class="form-field">
+            <label for="kind">What are you after?</label>
+            <div class="form-select-wrap">
+              <select id="kind" name="project_type" required>
+                <option value="" disabled selected>Pick one</option>
+                <option value="new-site">A brand new website</option>
+                <option value="update-existing">Updating my existing site</option>
+                <option value="not-sure">Not sure yet — just exploring</option>
+              </select>
+              <svg class="form-select-arrow" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M1 1.5 L6 6.5 L11 1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Tell us about your business</label>
+            <textarea id="message" name="message" rows="6" required placeholder="What does your business do? Who do you serve? Anything else we should know?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg contact-submit">
+            <span class="contact-submit-text">Send it through →</span>
+            <span class="contact-submit-loading">Sending...</span>
+          </button>
+
+          <p class="form-privacy">We'll only use your details to reply. No newsletters, no sharing, no funny business.</p>
+        </form>
+
+        <div class="contact-success" id="contact-success" hidden>
+          <div class="contact-success-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="24" cy="24" r="20"/>
+              <path d="M16 24l6 6 12-12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2>Got it. Thanks!</h2>
+          <p>We'll be in touch within 24 hours — usually much sooner. Check your inbox (and spam folder, just in case).</p>
+          <div class="contact-success-actions">
+            <a href="gallery.html" class="btn btn-ghost">Browse the gallery</a>
+            <a href="index.html" class="btn btn-ghost">Back to home</a>
+          </div>
+        </div>
+
+        <div class="contact-error" id="contact-error" hidden>
+          <p><strong>Hmm, that didn't send.</strong> Mind emailing us directly at <a href="mailto:hello@clickmax.com.au">hello@clickmax.com.au</a>? We'll get straight back to you.</p>
+        </div>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="contact-aside-block">
+          <div class="contact-aside-label">Prefer email?</div>
+          <a href="mailto:hello@clickmax.com.au" class="contact-email">hello@clickmax.com.au</a>
+          <p>Straight to the inbox. Same 24-hour reply.</p>
+        </div>
+
+        <div class="contact-aside-block">
+          <div class="contact-aside-label">What happens next</div>
+          <ol class="contact-steps">
+            <li>
+              <span class="contact-step-num">01</span>
+              <div>
+                <strong>We reply</strong>
+                <span>Within 24 hours, Mon–Fri. Usually much sooner.</span>
+              </div>
+            </li>
+            <li>
+              <span class="contact-step-num">02</span>
+              <div>
+                <strong>Quick call or email chat</strong>
+                <span>15 minutes to figure out what you actually need — no pitch deck, no pressure.</span>
+              </div>
+            </li>
+            <li>
+              <span class="contact-step-num">03</span>
+              <div>
+                <strong>You get a quote</strong>
+                <span>Clear scope, fixed price, rough timeline. Then you decide.</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="contact-aside-block contact-aside-quiet">
+          <div class="contact-aside-label">Based in</div>
+          <p class="contact-location">Melbourne, VIC</p>
+          <p class="contact-location-sub">Working with Australian small businesses wherever they are.</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="cta-band contact-cta-band">
+    <div class="wrap cta-inner">
+      <div>
+        <h2>Not quite ready?</h2>
+        <p>Have a browse through recent builds, or dig into pricing and process first.</p>
+      </div>
+      <div class="contact-cta-links">
+        <a href="gallery.html" class="btn btn-ghost">See the work →</a>
+        <a href="pricing.html" class="btn btn-ghost">View pricing →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#4F46E5"/><rect x="28" y="12" width="24" height="40" rx="8" fill="#FF5A45"/><text x="40" y="32" font-family="Newsreader, Georgia, serif" font-weight="800" font-style="italic" font-size="9" letter-spacing="-0.3" fill="#4F46E5" text-anchor="middle" dominant-baseline="middle" transform="rotate(90 40 32)">clickmax</text></svg>
+        <span class="logo-text">Clickmax</span>
+      </a>
+      <p>Fully custom websites, fully managed — so you never have to touch yours again.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:hello@clickmax.com.au">hello@clickmax.com.au</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© 2026 Clickmax</span>
+    <span class="footer-made">Designed &amp; hand-coded in Melbourne.</span>
+    <span>No templates. Fully managed. Built to keep.</span>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  const errorBox = document.getElementById('contact-error');
+  const submitBtn = form.querySelector('.contact-submit');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+    errorBox.hidden = true;
+
+    const formData = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.hidden = true;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      errorBox.hidden = false;
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+})();
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
