@@ -2653,16 +2653,34 @@ section.scale {
 .price-from {
   display: inline-block;
   font-family: var(--ff-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
-  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 .price-card-featured .price-from {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
+}
+
+.price-card-note {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin: -14px 0 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+  font-style: normal;
+}
+
+.price-card-featured .price-card-note {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .price-card-badge {
@@ -2756,19 +2774,14 @@ section.scale {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  padding-bottom: 22px;
-  margin-bottom: 22px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
 .price-card-price .price-from {
   flex: 0 0 100%;
   margin-bottom: 0;
-}
-
-.price-card-featured .price-card-price {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .price-amount {
