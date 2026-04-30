@@ -91,26 +91,26 @@
     const cafeMarkup = `
       <div class="cafe-site">
         <div class="cafe-nav">
-          <div class="cafe-nav-brand">BREWHAUS</div>
-          <div class="cafe-nav-links"><span>Menu</span><span>Visit</span><span>Book</span></div>
+          <div class="cafe-nav-brand">OAKRIDGE PHYSIO</div>
+          <div class="cafe-nav-links"><span>Services</span><span>Team</span><span>Book</span></div>
         </div>
         <div class="cafe-hero">
-          <div class="cafe-hero-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop');"></div>
+          <div class="cafe-hero-image" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop');"></div>
           <div class="cafe-hero-overlay"></div>
           <div class="cafe-hero-content">
-            <p class="cafe-hero-eyebrow">Grant St · Fitzroy</p>
-            <h1>Small batch.<br><em>Big mornings.</em></h1>
-            <p class="cafe-hero-sub">Locally roasted coffee and fresh pastries, served slow since 2019.</p>
+            <p class="cafe-hero-eyebrow">Hawthorn · Est. 2018</p>
+            <h1>Hands-on care.<br><em>Lasting results.</em></h1>
+            <p class="cafe-hero-sub">Evidence-based physiotherapy for everyday pain, sports injuries, and post-op recovery.</p>
             <div class="cafe-hero-ctas">
-              <div class="cafe-hero-btn primary">See the menu</div>
-              <div class="cafe-hero-btn ghost">Book a table</div>
+              <div class="cafe-hero-btn primary">Book a consult</div>
+              <div class="cafe-hero-btn ghost">Our services</div>
             </div>
           </div>
         </div>
         <div class="cafe-strip">
-          <div><span class="cafe-strip-label">Weekdays</span><strong>7–3</strong></div>
-          <div><span class="cafe-strip-label">Weekends</span><strong>8–1</strong></div>
-          <div><span class="cafe-strip-label">Near</span><strong>Tram 96</strong></div>
+          <div><span class="cafe-strip-label">Initial</span><strong>$145</strong></div>
+          <div><span class="cafe-strip-label">Follow-up</span><strong>$95</strong></div>
+          <div><span class="cafe-strip-label">Open</span><strong>Mon–Sat</strong></div>
         </div>
       </div>
     `;
@@ -140,47 +140,43 @@
 
     const scenarios = [
       {
-        url: 'brewhaus.cafe',
-        file: 'brewhaus/index.html',
-        client: { name: 'Jamie', sub: 'Brewhaus Coffee', avatar: 'J', avatarBg: 'linear-gradient(135deg, #FFB156, #FF5A45)' },
+        url: 'oakridgephysio.com.au',
+        file: 'oakridgephysio/index.html',
+        client: { name: 'Dr Sarah', sub: 'Oakridge Physio', avatar: 'S', avatarBg: 'linear-gradient(135deg, #6366F1, #4F46E5)' },
         turns: [
           { type: 'client-typing' },
-          { type: 'client', body: "Morning! Could we update our weekend hours? Changing to 8–1 instead of 8–2." },
+          { type: 'client', body: "Hi! Quick one — can we update our consult fees? Initial is now $145 instead of $130." },
           { type: 'us-typing', delay: 500 },
-          { type: 'us-reply', body: "Morning Jamie. Easy change — want me to update it everywhere, including the footer?" },
+          { type: 'us-reply', body: "Hi Sarah. No worries — want me to update it everywhere, pricing page and the FAQ?" },
           { type: 'code', tokens: [
-            { txt: '// ', cls: 'c' }, { txt: 'brewhaus/index.html', cls: 'c' }, { txt: '\n', cls: '' },
+            { txt: '// ', cls: 'c' }, { txt: 'oakridgephysio/pricing.html', cls: 'c' }, { txt: '\n', cls: '' },
             { txt: '<section', cls: 'k' }, { txt: ' class', cls: 'a' }, { txt: '=', cls: '' },
-            { txt: '"hours"', cls: 's' }, { txt: '>\n', cls: 'k' },
+            { txt: '"fees"', cls: 's' }, { txt: '>\n', cls: 'k' },
             { txt: '  <div>', cls: 'k' },
-            { txt: 'Mon–Fri ', cls: '' },
-            { txt: '<strong>', cls: 'k' }, { txt: '7–3', cls: '' }, { txt: '</strong>', cls: 'k' },
+            { txt: 'Initial consult ', cls: '' },
+            { txt: '<strong>', cls: 'k' }, { txt: '$145', cls: '' }, { txt: '</strong>', cls: 'k' },
             { txt: '</div>\n', cls: 'k' }
           ]},
           { type: 'client-typing' },
-          { type: 'client', body: "Yes please 🙏 and actually — could you also swap the hero image? Got a new shot from our photographer yesterday, I'll send it through." },
+          { type: 'client', body: "Yes please 🙏 and one more thing — could you add Dr Patel to the team page? She's starting Monday, I'll send her bio + photo through." },
           { type: 'us-typing', delay: 400 },
-          { type: 'us-reply', body: "Got it. I'll update both, push it live, and send a preview link shortly." },
+          { type: 'us-reply', body: "Easy. I'll update the fees, add Dr Patel to the team page, push it live, and send a preview link." },
           { type: 'code', tokens: [
             { txt: '  <div>', cls: 'k' },
-            { txt: 'Weekends ', cls: '' },
+            { txt: 'Follow-up ', cls: '' },
             { txt: '<strong>', cls: 'k' },
-            { txt: '8–1', cls: '' },
+            { txt: '$95', cls: '' },
             { txt: '</strong>', cls: 'k' },
-            { txt: ' ', cls: '' },
-            { txt: '<!-- updated -->', cls: 'c' },
             { txt: '</div>\n', cls: 'k' },
             { txt: '</section>\n\n', cls: 'k' },
-            { txt: '<section', cls: 'k' }, { txt: ' class', cls: 'a' }, { txt: '=', cls: '' },
-            { txt: '"hero"', cls: 's' }, { txt: '>\n', cls: 'k' },
-            { txt: '  <img', cls: 'k' }, { txt: ' src', cls: 'a' }, { txt: '=', cls: '' },
-            { txt: '"img/hero-new.jpg"', cls: 's' }, { txt: '\n', cls: '' },
-            { txt: '       alt', cls: 'a' }, { txt: '=', cls: '' },
-            { txt: '"Fresh pastries on the counter"', cls: 's' }, { txt: '>\n', cls: 'k' },
-            { txt: '</section>', cls: 'k' }
+            { txt: '<article', cls: 'k' }, { txt: ' class', cls: 'a' }, { txt: '=', cls: '' },
+            { txt: '"clinician"', cls: 's' }, { txt: '>\n', cls: 'k' },
+            { txt: '  <h3>', cls: 'k' }, { txt: 'Dr Priya Patel', cls: '' }, { txt: '</h3>\n', cls: 'k' },
+            { txt: '  <p>', cls: 'k' }, { txt: 'Sports & musculoskeletal physio', cls: '' }, { txt: '</p>\n', cls: 'k' },
+            { txt: '</article>', cls: 'k' }
           ]},
           { type: 'us-typing', delay: 400 },
-          { type: 'us-reply', body: "All done — your new hours and hero image are live." },
+          { type: 'us-reply', body: "All done — fees updated and Dr Patel's profile is live." },
           { type: 'toast' },
           { type: 'reveal' }
         ],
@@ -303,6 +299,7 @@
       toastEl.classList.remove('show');
       siteEl.classList.remove('show');
       viewportEl.innerHTML = '';
+      if (clientSubEl) clientSubEl.textContent = 'Online';
     }
 
     function addMessage(type, body) {
@@ -376,12 +373,6 @@
 
       urlEl.textContent = s.url;
       fileEl.textContent = s.file;
-      if (s.client) {
-        avatarEl.textContent = s.client.avatar;
-        avatarEl.style.background = s.client.avatarBg;
-        nameEl.textContent = s.client.name;
-        clientSubEl.textContent = s.client.sub;
-      }
 
       let currentTypingBubble = null;
       let codeStreamPromise = Promise.resolve();
@@ -413,6 +404,7 @@
             chatShown = true;
             await wait(400);
           }
+          if (clientSubEl) clientSubEl.textContent = 'Replying…';
           replyEl.innerHTML = '<span class="demo-typing-dark"><span></span><span></span><span></span></span>';
           await wait((turn.delay || 800) + 600);
         }
@@ -422,9 +414,11 @@
             chatShown = true;
             await wait(400);
           }
+          if (clientSubEl) clientSubEl.textContent = 'Replying…';
           await typeInto(replyEl, turn.body);
           if (!running) return;
           addMessage('us', turn.body);
+          if (clientSubEl) clientSubEl.textContent = 'Online';
           await wait(1200);
         }
         else if (turn.type === 'code') {

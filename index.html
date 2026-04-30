@@ -10,9 +10,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@1,800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Archivo+Black&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
@@ -38,460 +37,65 @@
 
 <main>
 
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <h1 class="hero-title">
-          Your premium<br>
-          custom website.<br>
-          <em>Without</em> <span class="hero-accent">the headache.</span>
+  <section class="hero-medical">
+
+    <div class="hero-medical-canvas">
+
+      <img class="hero-medical-img" src="images/hero-laptop.png" alt="Tallowood Sports Physiotherapy website on laptop">
+
+      <div class="hero-medical-fade"></div>
+
+      <svg class="hero-medical-star hero-medical-star-1" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
+      <svg class="hero-medical-star hero-medical-star-2" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
+      <svg class="hero-medical-star hero-medical-star-3" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
+      <svg class="hero-medical-star hero-medical-star-4" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
+      <svg class="hero-medical-star hero-medical-star-5" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
+
+      <div class="hero-medical-content">
+        <div class="hero-medical-eyebrow">Websites for medical &amp; allied health practices</div>
+
+        <h1 class="hero-medical-title">
+          Websites that<br>
+          match the care<br>
+          you provide.
         </h1>
-        <p class="hero-sub">
-          We design it, we build it, we host it. Then we look after it for as long as you want — so you can focus on running your business, not wrestling with your website.
+
+        <p class="hero-medical-body">
+          Modern, mobile friendly websites built specifically for clinicians, allied health practitioners, and Melbourne practices. Polished, fast, AHPRA-aware — open to all industries, but built with healthcare's standards in mind.
         </p>
-        <div class="hero-ctas">
-          <a href="pricing.html" class="btn btn-primary">See pricing →</a>
-          <a href="gallery.html" class="btn btn-ghost">View our work →</a>
-        </div>
-        <div class="hero-meta">
-          <div><strong>No templates</strong><span>every site built from scratch</span></div>
-          <div><strong>Hand-coded</strong><span>clean, fast, made to last</span></div>
-          <div><strong>Fully managed</strong><span>we handle every change</span></div>
-        </div>
-      </div>
 
-      <div class="hero-showcase" aria-hidden="true">
-        <div class="showcase-frame">
-          <div class="showcase-chrome">
-            <div class="showcase-url">clickmax.com.au</div>
-            <div class="showcase-window">
-              <span class="showcase-min">_</span>
-              <span class="showcase-close">×</span>
-            </div>
+        <div class="hero-medical-badges">
+          <div class="hero-medical-badge">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 4.5 L8 2 L13 4.5 V8.5 C13 11 10.5 13 8 14 C5.5 13 3 11 3 8.5 Z"/>
+              <path d="M5.5 8 L7 9.5 L10.5 6"/>
+            </svg>
+            <span>AHPRA-compliant</span>
           </div>
-          <div class="showcase-viewport">
-            <div class="showcase-track">
-
-              <!-- 1. Carpenter — polished tradie / construction company -->
-              <div class="mock mock-carpenter">
-                <div class="carpenter-topbar">
-                  <div class="carpenter-tb-left">
-                    <span><svg class="m-icon-pin" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1c-2 0-4 1.6-4 3.8C2 7.5 6 11 6 11s4-3.5 4-6.2C10 2.6 8 1 6 1z" stroke-linejoin="round"/><circle cx="6" cy="4.8" r="1.2"/></svg> Brunswick &amp; surrounds</span>
-                    <span class="carpenter-tb-divider"></span>
-                    <span><svg class="m-icon-tool" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 9.5l4.5-4.5M7 2.5l2.5 2.5M5 8l2 2-1.5 1.5-2-2zM6 4l4-2.5L11 2l-.5 1L8 7z" stroke-linejoin="round" stroke-linecap="round"/></svg> Licensed builder #L8473</span>
-                  </div>
-                  <div class="carpenter-tb-right">
-                    <strong><svg class="m-icon-phone" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3.5 1.5h2l1 2.5-1.5 1a6 6 0 003 3l1-1.5 2.5 1v2a1 1 0 01-1 1A9 9 0 012.5 2.5a1 1 0 011-1z" stroke-linejoin="round"/></svg> 0412 987 334</strong>
-                  </div>
-                </div>
-                <div class="carpenter-nav">
-                  <div class="carpenter-logo-v2">
-                    <div class="carpenter-logo-mark">O&amp;S</div>
-                    <div class="carpenter-logo-text">
-                      <strong>OAK &amp; STEEL</strong>
-                      <span>CARPENTRY · JOINERY · BUILDS</span>
-                    </div>
-                  </div>
-                  <div class="carpenter-nav-links">
-                    <span>Home</span>
-                    <span>Services</span>
-                    <span>Portfolio</span>
-                    <span>Reviews</span>
-                    <span class="carpenter-nav-cta">Free Quote →</span>
-                  </div>
-                </div>
-                <div class="carpenter-hero-v2">
-                  <div class="carpenter-photo-v2" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&q=80&auto=format&fit=crop');"></div>
-                  <div class="carpenter-hero-overlay-v2"></div>
-                  <div class="carpenter-hero-content">
-                    <div class="carpenter-badge">★★★★★ 4.9 · 180+ REVIEWS</div>
-                    <div class="carpenter-headline-v2">Built properly.<br>Built to last.</div>
-                    <div class="carpenter-sub-v2">Custom kitchens, wardrobes, decking &amp; renovations across Melbourne's north. Fully licensed, fully insured, 10-year workmanship guarantee.</div>
-                    <div class="carpenter-cta-row">
-                      <div class="m-btn carpenter-cta-primary">Get a free quote</div>
-                      <div class="m-btn carpenter-cta-ghost">View our work →</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carpenter-footer">
-                  <div class="carpenter-footer-photo" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80&auto=format&fit=crop');"></div>
-                  <div class="carpenter-footer-reviews">
-                    <div class="carpenter-review">
-                      <div class="carpenter-review-stars">★★★★★</div>
-                      <p>"Absolute legends. New kitchen came up a treat, on time and on budget."</p>
-                      <span>— Mark K., Brunswick</span>
-                    </div>
-                    <div class="carpenter-review">
-                      <div class="carpenter-review-stars">★★★★★</div>
-                      <p>"Best tradies we've had in the house. Clean, on-time, quality work."</p>
-                      <span>— Sarah T., Coburg</span>
-                    </div>
-                  </div>
-                  <div class="carpenter-footer-cta">
-                    <div class="carpenter-footer-cta-title">Need a quote?</div>
-                    <div class="carpenter-footer-cta-phone"><svg class="m-icon-phone" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3.5 1.5h2l1 2.5-1.5 1a6 6 0 003 3l1-1.5 2.5 1v2a1 1 0 01-1 1A9 9 0 012.5 2.5a1 1 0 011-1z" stroke-linejoin="round"/></svg> 0412 987 334</div>
-                    <div class="carpenter-footer-cta-btn">Contact us now →</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- 2. Medical Clinic — centered wellness brand -->
-              <div class="mock mock-clinic">
-                <div class="clinic-nav-v2">
-                  <span>Services</span>
-                  <div class="clinic-logo-center"><span class="clinic-cross">+</span> Meridian</div>
-                  <span>Book →</span>
-                </div>
-                <div class="clinic-hero-v2">
-                  <div class="clinic-eyebrow-v2">FAMILY MEDICINE · RICHMOND</div>
-                  <h1 class="clinic-headline-v2">Care that feels<br><em>personal.</em></h1>
-                  <p class="clinic-sub-v2">Bulk-billed family GPs, allied health, and specialists — under one roof, seven days a week.</p>
-                  <div class="clinic-cta-row">
-                    <div class="m-btn teal">Book online</div>
-                    <div class="clinic-phone">or call <strong>(03) 9421 8800</strong></div>
-                  </div>
-                </div>
-                <div class="clinic-doctors">
-                  <div class="clinic-doctors-head">
-                    <div class="clinic-doctors-title">Meet our doctors</div>
-                    <div class="clinic-doctors-sub">7 GPs · bulk-billed · accepting new patients</div>
-                  </div>
-                  <div class="clinic-doctors-list">
-                    <div class="clinic-doctor">
-                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&q=75&auto=format&fit=crop');"></div>
-                      <div class="clinic-doctor-info">
-                        <strong>Dr. Priya Nair</strong>
-                        <span>Family GP · Women's health</span>
-                      </div>
-                    </div>
-                    <div class="clinic-doctor">
-                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&q=75&auto=format&fit=crop');"></div>
-                      <div class="clinic-doctor-info">
-                        <strong>Dr. James O'Connor</strong>
-                        <span>Family GP · Paediatrics</span>
-                      </div>
-                    </div>
-                    <div class="clinic-doctor">
-                      <div class="clinic-doctor-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=120&q=75&auto=format&fit=crop');"></div>
-                      <div class="clinic-doctor-info">
-                        <strong>Dr. Mei Zhang</strong>
-                        <span>Skin &amp; mental health</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clinic-doctors-cta-wrap">
-                    <div class="clinic-doctors-cta">Book with a GP →</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider dark"></div>
-
-              <!-- 3. Restaurant — cinematic full-bleed -->
-              <div class="mock mock-restaurant">
-                <div class="resto-nav">
-                  <div class="m-logo resto-logo">Nonna's</div>
-                  <div class="m-nav-links resto-links"><span>Menu</span><span>Wine List</span><span>Reserve</span></div>
-                </div>
-                <div class="mock-hero-resto">
-                  <div class="resto-photo" style="background-image: url('https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=700&q=80&auto=format&fit=crop');"></div>
-                  <div class="resto-overlay"></div>
-                  <div class="resto-headline">
-                    <div class="m-eyebrow resto">FITZROY · DINNER WED–SUN</div>
-                    <div class="m-headline resto"><em>Cucina</em><br>italiana.</div>
-                    <div class="m-sub resto">Handmade pasta, wood-fired pizza, and a natural wine list.</div>
-                    <div class="m-btn cream">Reserve a table →</div>
-                  </div>
-                  <div class="resto-stars">
-                    <span>★★★★★</span>
-                    <span class="resto-stars-text">"One of Fitzroy's finest" — The Age</span>
-                  </div>
-                </div>
-                <div class="resto-menu-strip">
-                  <div class="resto-menu-item"><span>Antipasti</span><strong>from $14</strong></div>
-                  <div class="resto-menu-item"><span>Primi</span><strong>from $22</strong></div>
-                  <div class="resto-menu-item"><span>Secondi</span><strong>from $34</strong></div>
-                  <div class="resto-menu-item"><span>Dolci</span><strong>from $12</strong></div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- 4. Electrician — polished tradie with real imagery -->
-              <div class="mock mock-electric">
-                <div class="electric-nav-v2">
-                  <div class="m-logo electric-logo"><span class="bolt"><svg class="m-icon-bolt" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M8 1 3 8h3l-1 5 5-7H7l1-5z"/></svg></span> VOLT CO</div>
-                  <div class="electric-phone-header">
-                    <span class="electric-live-dot"></span>
-                    <span>Available now</span>
-                    <strong>1300 86 5800</strong>
-                  </div>
-                </div>
-                <div class="electric-hero-v3">
-                  <div class="electric-photo-bg" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80&auto=format&fit=crop');"></div>
-                  <div class="electric-photo-overlay"></div>
-                  <div class="electric-hero-content">
-                    <div class="electric-badge"><svg class="m-icon-bolt-sm" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M6 1 2 5.5h2l-.5 3.5 4-5H5.5L6 1z"/></svg> 24/7 EMERGENCY CALLOUTS</div>
-                    <div class="electric-headline-v2">Power done<br>properly.</div>
-                    <div class="electric-sub-v2">Melbourne's trusted electricians since 2009. Residential, commercial &amp; industrial — fast response, upfront pricing.</div>
-                    <div class="electric-ctas-v2">
-                      <div class="m-btn yellow">Call now — 1300 86 5800</div>
-                      <div class="m-btn ghost-light">Get a quote</div>
-                    </div>
-                    <div class="electric-trust">
-                      <span><span class="electric-check">✓</span> Licensed Level 2</span>
-                      <span><span class="electric-check">✓</span> Fully insured</span>
-                      <span><span class="electric-check">✓</span> 10yr warranty</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="electric-review-card">
-                  <div class="electric-review-left">
-                    <div class="electric-review-stars">★★★★★</div>
-                    <div class="electric-review-source">Google Reviews</div>
-                  </div>
-                  <div class="electric-review-quote">
-                    <p>"Called at 9pm with a dead fuse box — tech was at our door within 40 minutes. Fixed it clean and the price was exactly what he quoted. Will use VOLT again."</p>
-                    <span>— David M., Thornbury · 3 days ago</span>
-                  </div>
-                  <div class="electric-review-score">
-                    <strong>4.9</strong>
-                    <span>out of 5</span>
-                    <small>410+ reviews</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- 5. E-commerce — shop browsing layout -->
-              <div class="mock mock-ecom">
-                <div class="ecom-nav-v2">
-                  <div class="ecom-nav-left">
-                    <span>Women</span>
-                    <span>Men</span>
-                    <span>New In</span>
-                  </div>
-                  <div class="m-logo ecom-logo">MAVEN</div>
-                  <div class="ecom-nav-right">
-                    <span>Search</span>
-                    <span>Account</span>
-                    <span>Bag (2)</span>
-                  </div>
-                </div>
-                <div class="ecom-featured-bar">
-                  <span>AUTUMN '26 IS HERE</span>
-                  <span class="ecom-dot"></span>
-                  <span>Free shipping over $150</span>
-                  <span class="ecom-dot"></span>
-                  <span>Easy returns</span>
-                </div>
-                <div class="ecom-shop-grid">
-                  <div class="ecom-feature-card">
-                    <div class="ecom-feature-photo" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80&auto=format&fit=crop');"></div>
-                    <div class="ecom-feature-label">
-                      <div class="ecom-feature-eyebrow">THE LOOKBOOK</div>
-                      <div class="ecom-feature-title"><em>Softer,</em> always.</div>
-                      <div class="m-btn black">Shop the drop →</div>
-                    </div>
-                  </div>
-                  <div class="ecom-products-col">
-                    <div class="ecom-small-product">
-                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&q=75&auto=format&fit=crop');"></div>
-                      <div class="ecom-small-info">
-                        <strong>Merino knit</strong>
-                        <span>$180 · 4 colours</span>
-                      </div>
-                    </div>
-                    <div class="ecom-small-product">
-                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&q=75&auto=format&fit=crop');"></div>
-                      <div class="ecom-small-info">
-                        <strong>Wool overcoat</strong>
-                        <span>$245 · 3 colours</span>
-                      </div>
-                    </div>
-                    <div class="ecom-small-product">
-                      <div class="ecom-small-photo" style="background-image: url('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&q=75&auto=format&fit=crop');"></div>
-                      <div class="ecom-small-info">
-                        <strong>Leather tote</strong>
-                        <span>$320 · 2 colours</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- 6. Architecture — magazine spread with side nav -->
-              <div class="mock mock-arch">
-                <div class="arch-layout">
-                  <div class="arch-sidebar">
-                    <div class="arch-logo-stack">
-                      <div>BLANC</div>
-                      <div>/ LE</div>
-                      <div class="arch-reg-line">Architects ®</div>
-                    </div>
-                    <div class="arch-side-nav">
-                      <div class="arch-side-item active">Projects</div>
-                      <div class="arch-side-item">Studio</div>
-                      <div class="arch-side-item">Press</div>
-                      <div class="arch-side-item">Contact</div>
-                    </div>
-                    <div class="arch-side-footer">
-                      <div>EST. 2011</div>
-                      <div>MELBOURNE</div>
-                    </div>
-                  </div>
-                  <div class="arch-main">
-                    <div class="arch-main-photo" style="background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=80&auto=format&fit=crop');">
-                      <div class="arch-photo-tag">
-                        <span>01 / 24</span>
-                      </div>
-                    </div>
-                    <div class="arch-main-text">
-                      <div class="arch-project-number">— Project N°24</div>
-                      <h1 class="arch-main-title"><em>The Gertrude</em></h1>
-                      <div class="arch-meta-row">
-                        <div><span>Location</span><strong>Fitzroy, VIC</strong></div>
-                        <div><span>Completed</span><strong>2025</strong></div>
-                        <div><span>Type</span><strong>Residential</strong></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- 7. SaaS — dashboard hero dominant -->
-              <div class="mock mock-saas-new">
-                <div class="mock-nav saas-nav">
-                  <div class="m-logo saas-logo"><span class="saas-dot"></span> Flowstate</div>
-                  <div class="m-nav-links saas-links"><span>Product</span><span>Docs</span><span>Pricing</span><span>Login</span><span class="saas-cta">Try free →</span></div>
-                </div>
-                <div class="saas-hero-v2">
-                  <div class="saas-hero-top">
-                    <div class="saas-badge">✦ New — AI-native</div>
-                    <h1 class="saas-headline-v2">The workspace that <em>thinks ahead.</em></h1>
-                    <p class="saas-sub-v2">Plans sprints, writes updates, tracks shipping — built for teams that ship.</p>
-                    <div class="saas-hero-ctas-v2">
-                      <div class="m-btn indigo">Start for free</div>
-                      <div class="saas-secondary">Watch demo · 90 sec</div>
-                    </div>
-                  </div>
-                  <div class="saas-dashboard-big">
-                    <div class="saas-dash-sidebar">
-                      <div class="saas-dash-side-item active">● Overview</div>
-                      <div class="saas-dash-side-item">◉ Projects</div>
-                      <div class="saas-dash-side-item">◎ Team</div>
-                      <div class="saas-dash-side-item">◌ Reports</div>
-                    </div>
-                    <div class="saas-dash-main">
-                      <div class="saas-dash-statrow">
-                        <div class="saas-dash-stat">
-                          <span>This week</span>
-                          <strong>128</strong>
-                          <small class="saas-up">↑ 12%</small>
-                        </div>
-                        <div class="saas-dash-stat">
-                          <span>Shipped</span>
-                          <strong>42</strong>
-                          <small class="saas-up">↑ 8%</small>
-                        </div>
-                        <div class="saas-dash-stat">
-                          <span>In review</span>
-                          <strong>7</strong>
-                          <small class="saas-flat">—</small>
-                        </div>
-                      </div>
-                      <div class="saas-chart">
-                        <div class="saas-chart-bar b1"></div>
-                        <div class="saas-chart-bar b2"></div>
-                        <div class="saas-chart-bar b3"></div>
-                        <div class="saas-chart-bar b4"></div>
-                        <div class="saas-chart-bar b5"></div>
-                        <div class="saas-chart-bar b6"></div>
-                        <div class="saas-chart-bar b7"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-divider"></div>
-
-              <!-- Duplicate first for seamless loop -->
-              <div class="mock mock-carpenter">
-                <div class="carpenter-topbar">
-                  <div class="carpenter-tb-left">
-                    <span><svg class="m-icon-pin" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1c-2 0-4 1.6-4 3.8C2 7.5 6 11 6 11s4-3.5 4-6.2C10 2.6 8 1 6 1z" stroke-linejoin="round"/><circle cx="6" cy="4.8" r="1.2"/></svg> Brunswick &amp; surrounds</span>
-                    <span class="carpenter-tb-divider"></span>
-                    <span><svg class="m-icon-tool" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2.5 9.5l4.5-4.5M7 2.5l2.5 2.5M5 8l2 2-1.5 1.5-2-2zM6 4l4-2.5L11 2l-.5 1L8 7z" stroke-linejoin="round" stroke-linecap="round"/></svg> Licensed builder #L8473</span>
-                  </div>
-                  <div class="carpenter-tb-right">
-                    <strong><svg class="m-icon-phone" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3.5 1.5h2l1 2.5-1.5 1a6 6 0 003 3l1-1.5 2.5 1v2a1 1 0 01-1 1A9 9 0 012.5 2.5a1 1 0 011-1z" stroke-linejoin="round"/></svg> 0412 987 334</strong>
-                  </div>
-                </div>
-                <div class="carpenter-nav">
-                  <div class="carpenter-logo-v2">
-                    <div class="carpenter-logo-mark">O&amp;S</div>
-                    <div class="carpenter-logo-text">
-                      <strong>OAK &amp; STEEL</strong>
-                      <span>CARPENTRY · JOINERY · BUILDS</span>
-                    </div>
-                  </div>
-                  <div class="carpenter-nav-links">
-                    <span>Home</span>
-                    <span>Services</span>
-                    <span>Portfolio</span>
-                    <span>Reviews</span>
-                    <span class="carpenter-nav-cta">Free Quote →</span>
-                  </div>
-                </div>
-                <div class="carpenter-hero-v2">
-                  <div class="carpenter-photo-v2" style="background-image: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&q=80&auto=format&fit=crop');"></div>
-                  <div class="carpenter-hero-overlay-v2"></div>
-                  <div class="carpenter-hero-content">
-                    <div class="carpenter-badge">★★★★★ 4.9 · 180+ REVIEWS</div>
-                    <div class="carpenter-headline-v2">Built properly.<br>Built to last.</div>
-                    <div class="carpenter-sub-v2">Custom kitchens, wardrobes, decking &amp; renovations across Melbourne's north. Fully licensed, fully insured, 10-year workmanship guarantee.</div>
-                    <div class="carpenter-cta-row">
-                      <div class="m-btn carpenter-cta-primary">Get a free quote</div>
-                      <div class="m-btn carpenter-cta-ghost">View our work →</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carpenter-footer">
-                  <div class="carpenter-footer-photo" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=80&auto=format&fit=crop');"></div>
-                  <div class="carpenter-footer-reviews">
-                    <div class="carpenter-review">
-                      <div class="carpenter-review-stars">★★★★★</div>
-                      <p>"Absolute legends. New kitchen came up a treat, on time and on budget."</p>
-                      <span>— Mark K., Brunswick</span>
-                    </div>
-                    <div class="carpenter-review">
-                      <div class="carpenter-review-stars">★★★★★</div>
-                      <p>"Best tradies we've had in the house. Clean, on-time, quality work."</p>
-                      <span>— Sarah T., Coburg</span>
-                    </div>
-                  </div>
-                  <div class="carpenter-footer-cta">
-                    <div class="carpenter-footer-cta-title">Need a quote?</div>
-                    <div class="carpenter-footer-cta-phone"><svg class="m-icon-phone" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3.5 1.5h2l1 2.5-1.5 1a6 6 0 003 3l1-1.5 2.5 1v2a1 1 0 01-1 1A9 9 0 012.5 2.5a1 1 0 011-1z" stroke-linejoin="round"/></svg> 0412 987 334</div>
-                    <div class="carpenter-footer-cta-btn">Contact us now →</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <div class="hero-medical-badge">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M8 4.5 V8 L10.5 9.5"/>
+            </svg>
+            <span>Sub-1s load times</span>
+          </div>
+          <div class="hero-medical-badge">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12 V4 H14 V12 Z"/>
+              <path d="M2 6 H14"/>
+              <path d="M5 9 H7 M9 9 H11"/>
+            </svg>
+            <span>Booking integrations</span>
           </div>
         </div>
-        <div class="showcase-glow"></div>
+
+        <div class="hero-medical-ctas">
+          <a href="contact.html" class="btn btn-primary">Start a project →</a>
+          <a href="work/tallowood/tallowood-index.html" class="btn btn-ghost">See a live demo →</a>
+        </div>
       </div>
     </div>
+
   </section>
 
   <section class="industries-strip">
@@ -550,17 +154,57 @@
     </div>
   </section>
 
-  <section class="scale">
+  <section class="any-size">
     <div class="wrap">
-      <div class="section-head">
-        <h2>One page or twenty. <em>Same care, same craft.</em></h2>
-        <p class="section-lede">
-          A simple landing page for a new service? A sprawling site with booking, galleries, and a blog? Both get the full hands-on treatment. The process doesn't change, the quality doesn't slip — the scope just expands to fit what your business actually needs.
+      <div class="any-size-head">
+        <h2>From one-person operations<br><em>to multi-site businesses.</em></h2>
+        <p>
+          We don't run a "small business" track and an "enterprise" track. Every site gets the same hands-on craft — the only thing that changes is scope.
         </p>
       </div>
 
-      <div class="scope-map" id="scope-map">
-        <div class="scope-map-canvas" id="scope-map-canvas"></div>
+      <div class="any-size-progression">
+        <div class="any-size-step any-size-step-sm">
+          <div class="any-size-icon-wrap">
+            <svg class="any-size-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 28v22h36V28"/>
+              <path d="M10 28h44l-4-10H14L10 28z"/>
+              <path d="M28 50V36h8v14"/>
+              <path d="M14 32h6v6h-6zM44 32h6v6h-6z"/>
+            </svg>
+          </div>
+          <div class="any-size-step-label">Solo</div>
+        </div>
+
+        <div class="any-size-connector"></div>
+
+        <div class="any-size-step any-size-step-md">
+          <div class="any-size-icon-wrap">
+            <svg class="any-size-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 56V14h36v42"/>
+              <path d="M10 56h44"/>
+              <path d="M20 22h4M30 22h4M40 22h4M20 30h4M30 30h4M40 30h4M20 38h4M40 38h4"/>
+              <path d="M28 56V44h8v12"/>
+            </svg>
+          </div>
+          <div class="any-size-step-label">Established</div>
+        </div>
+
+        <div class="any-size-connector"></div>
+
+        <div class="any-size-step any-size-step-lg">
+          <div class="any-size-icon-wrap">
+            <svg class="any-size-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 56V8h20v48"/>
+              <path d="M8 56V28h14v28"/>
+              <path d="M42 56V20h14v36"/>
+              <path d="M6 56h52"/>
+              <path d="M26 16h4M34 16h4M26 24h4M34 24h4M26 32h4M34 32h4M26 40h4M34 40h4M26 48h4M34 48h4"/>
+              <path d="M12 34h4M12 42h4M12 50h4M48 26h4M48 34h4M48 42h4M48 50h4"/>
+            </svg>
+          </div>
+          <div class="any-size-step-label">Multi-site</div>
+        </div>
       </div>
     </div>
   </section>
@@ -578,13 +222,26 @@
             <div class="demo-phone">
               <div class="demo-phone-notch"></div>
               <div class="demo-phone-header">
-                <div class="demo-phone-avatar" data-demo-avatar>J</div>
+                <div class="demo-phone-avatar demo-phone-avatar-cm" data-demo-avatar>C</div>
                 <div>
-                  <strong data-demo-name>Jamie</strong>
-                  <span class="demo-phone-sub" data-demo-client-sub>Cafe owner</span>
+                  <strong data-demo-name>Clickmax</strong>
+                  <span class="demo-phone-sub" data-demo-client-sub>Online</span>
                 </div>
               </div>
               <div class="demo-phone-body" data-demo-messages></div>
+            </div>
+
+            <div class="demo-toast" data-demo-toast>
+              <div class="demo-toast-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="demo-toast-body">
+                <strong>Your site is ready.</strong>
+                <span>Take a look ↓</span>
+              </div>
             </div>
           </div>
 
@@ -607,19 +264,6 @@
                 </div>
               </div>
               <pre class="demo-code-body" data-demo-code></pre>
-            </div>
-
-            <div class="demo-toast" data-demo-toast>
-              <div class="demo-toast-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="demo-toast-body">
-                <strong>Your site is ready.</strong>
-                <span>Take a look ↓</span>
-              </div>
             </div>
 
             <div class="demo-site" data-demo-site>
@@ -696,7 +340,7 @@
               <circle cx="36" cy="5" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </div>
-          <h3>It won't be slow or clunky.</h3>
+          <h3>Built like it should be.</h3>
           <p>Clean code. Lightning fast. Accessible. SEO-ready out of the box. The kind of site that makes other developers open the inspector and go "huh, nice."</p>
         </div>
         <div class="why-card">
@@ -711,6 +355,83 @@
           <h3>You own all of it.</h3>
           <p>You own the code, the domain, the content — all of it. No platform lock-in, no "our builder, our rules." Walk away with everything whenever you want.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="versus">
+    <div class="wrap">
+      <div class="section-head versus-head">
+        <h2>Custom-coded vs <em>WordPress.</em></h2>
+        <p class="section-lede">Most small business sites are still built on WordPress. Here's why we don't, and what you actually get when a site is written from scratch instead.</p>
+      </div>
+
+      <div class="versus-table">
+        <div class="versus-row versus-row-head">
+          <div class="versus-cell versus-cell-label"></div>
+          <div class="versus-cell versus-col-wp">
+            <span class="versus-col-tag">WordPress</span>
+          </div>
+          <div class="versus-cell versus-col-us">
+            <span class="versus-col-tag">Clickmax</span>
+          </div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Speed</div>
+          <div class="versus-cell versus-cell-wp">3–8s load times once plugins stack up</div>
+          <div class="versus-cell versus-cell-us">Under 1s on mobile, every build</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Maintenance</div>
+          <div class="versus-cell versus-cell-wp">Constant plugin updates, security patches, breakages</div>
+          <div class="versus-cell versus-cell-us">Nothing to update — there are no plugins</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Look &amp; feel</div>
+          <div class="versus-cell versus-cell-wp">Themes that look like every other small business site</div>
+          <div class="versus-cell versus-cell-us">Designed for your brand, end to end</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">SEO &amp; Google</div>
+          <div class="versus-cell versus-cell-wp">Slower sites get ranked lower — Google penalises bloat</div>
+          <div class="versus-cell versus-cell-us">Lean code that ranks better out of the box</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Edits &amp; updates</div>
+          <div class="versus-cell versus-cell-wp">Log in, learn the CMS, make the change yourself</div>
+          <div class="versus-cell versus-cell-us">Message us — most edits live the same day</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Security</div>
+          <div class="versus-cell versus-cell-wp">Constant target — 90% of CMS hacks are WordPress</div>
+          <div class="versus-cell versus-cell-us">Static files, nothing to hack</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">Long-term cost</div>
+          <div class="versus-cell versus-cell-wp">Hosting + plugins + dev fixes add up fast</div>
+          <div class="versus-cell versus-cell-us">Flat monthly. No surprises.</div>
+        </div>
+
+        <div class="versus-row">
+          <div class="versus-cell versus-cell-label">If you leave</div>
+          <div class="versus-cell versus-cell-wp">Stuck with your hosting bill, plugins, and updates</div>
+          <div class="versus-cell versus-cell-us">Take the code and go — any dev can pick it up</div>
+        </div>
+      </div>
+
+      <p class="versus-footnote">If you've already got a WordPress site you want migrated to a faster, lower-maintenance build — we can do that too.</p>
+
+      <div class="versus-leave">
+        <div class="versus-leave-label">No lock-in, ever</div>
+        <h3>And if it's ever not working out?</h3>
+        <p>Cancel anytime. You keep the code, the domain, the content — the lot. Your site is plain HTML and CSS, so any web developer in the world can take over from where we left off. We'll even hand it over cleanly with a handover doc if you ever want to walk. Most clients stay because the service is good, not because they're stuck.</p>
       </div>
     </div>
   </section>
@@ -784,129 +505,22 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  const el = document.getElementById('scope-map-canvas');
-  if(!el || typeof L === 'undefined') return;
-
-  const businesses = [
-    { name: "CBD Studio", type: "Creative agency", pages: "6 pages", lat: -37.8136, lng: 144.9631 },
-    { name: "South Yarra Aesthetics", type: "Beauty clinic", pages: "8 pages", lat: -37.8388, lng: 144.9928 },
-    { name: "Malvern Dental Studio", type: "Dental clinic", pages: "9 pages", lat: -37.8590, lng: 145.0270 },
-    { name: "Melbourne Polishing", type: "Metal polisher", pages: "4 pages", lat: -37.9395, lng: 145.0610 },
-    { name: "Oakleigh Auto Body", type: "Mechanic", pages: "5 pages", lat: -37.9000, lng: 145.0890 },
-    { name: "Angel Face Aesthetics", type: "Beauty clinic", pages: "10 pages", lat: -37.8920, lng: 145.1730 },
-    { name: "Glen Waverley Superclinic", type: "GP clinic", pages: "11 pages", lat: -37.8780, lng: 145.1640 },
-    { name: "Ringwood Boutique Hotel", type: "Hospitality", pages: "14 pages", lat: -37.8160, lng: 145.2290 },
-    { name: "Doncaster Metal Polishing", type: "Metal polisher", pages: "3 pages", lat: -37.7870, lng: 145.1240 },
-    { name: "Greensborough Bistro", type: "Local restaurant", pages: "2 pages", lat: -37.7050, lng: 145.1030 },
-    { name: "Reservoir Physio", type: "Physiotherapy", pages: "7 pages", lat: -37.7180, lng: 145.0090 },
-    { name: "Epping Family Clinic", type: "GP clinic", pages: "10 pages", lat: -37.6510, lng: 145.0290 },
-    { name: "Tullamarine Logistics", type: "Freight", pages: "4 pages", lat: -37.7020, lng: 144.8800 },
-    { name: "Essendon Aesthetics", type: "Beauty clinic", pages: "8 pages", lat: -37.7510, lng: 144.9180 },
-    { name: "Footscray Cafe", type: "Cafe", pages: "3 pages", lat: -37.8000, lng: 144.8990 },
-    { name: "Altona Marine Services", type: "Marine repair", pages: "6 pages", lat: -37.8680, lng: 144.8290 }
-  ];
-
-  const map = L.map(el, {
-    zoomControl: false,
-    attributionControl: false,
-    dragging: false,
-    scrollWheelZoom: false,
-    doubleClickZoom: false,
-    touchZoom: false,
-    boxZoom: false,
-    keyboard: false,
-    zoomSnap: 0.25
-  }).setView([businesses[0].lat, businesses[0].lng], 13.5);
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 18,
-    subdomains: 'abcd'
-  }).addTo(map);
-
-  const pinIcon = L.divIcon({
-    className: 'scope-map-pin',
-    html: '<span class="scope-map-pin-dot"></span><span class="scope-map-pin-pulse"></span>',
-    iconSize: [32, 32],
-    iconAnchor: [16, 16]
-  });
-
-  const activePinIcon = L.divIcon({
-    className: 'scope-map-pin scope-map-pin-active',
-    html: '<span class="scope-map-pin-dot"></span><span class="scope-map-pin-pulse"></span>',
-    iconSize: [32, 32],
-    iconAnchor: [16, 16]
-  });
-
-  const markers = businesses.map(b =>
-    L.marker([b.lat, b.lng], { icon: pinIcon, interactive: false }).addTo(map)
-  );
-
-  let i = 0;
-  let paused = false;
-  let timer;
-  let activeTooltip = null;
-
-  function showCurrent(){
-    markers.forEach((m, idx) => {
-      m.setIcon(idx === i ? activePinIcon : pinIcon);
-    });
-
-    if(activeTooltip){
-      activeTooltip.remove();
-      activeTooltip = null;
-    }
-
-    const b = businesses[i];
-    map.setView([b.lat, b.lng], 13.5, {
-      animate: true,
-      pan: { duration: 2.2, easeLinearity: 0.3 },
-      zoom: { animate: false }
-    });
-
-    setTimeout(() => {
-      if(paused) return;
-      const html = `
-        <div class="scope-tag-inner">
-          <div class="scope-tag-tag">Built by Clickmax</div>
-          <div class="scope-tag-name">${b.name}</div>
-          <div class="scope-tag-meta">${b.type} · ${b.pages}</div>
-        </div>
-      `;
-      activeTooltip = L.tooltip({
-        permanent: true,
-        direction: 'right',
-        offset: [20, 0],
-        className: 'scope-tag',
-        interactive: false
-      });
-      activeTooltip.setLatLng([b.lat, b.lng]);
-      activeTooltip.setContent(html);
-      activeTooltip.addTo(map);
-
-      clearTimeout(timer);
-      timer = setTimeout(next, 4500);
-    }, 2400);
-  }
-
-  function next(){
-    if(paused) return;
-    i = (i + 1) % businesses.length;
-    showCurrent();
-  }
-
-  setTimeout(showCurrent, 600);
-
-  const wrap = document.getElementById('scope-map');
-  wrap.addEventListener('mouseenter', () => { paused = true; clearTimeout(timer); });
-  wrap.addEventListener('mouseleave', () => { paused = false; timer = setTimeout(next, 2500); });
-
-  setTimeout(() => map.invalidateSize(), 100);
-})();
-</script>
 
 <script src="js/main.js"></script>
+<script>
+(function(){
+  const steps = document.querySelectorAll('.any-size-step');
+  if(!steps.length) return;
+
+  let i = 0;
+  steps[0].classList.add('is-active');
+
+  setInterval(() => {
+    steps[i].classList.remove('is-active');
+    i = (i + 1) % steps.length;
+    steps[i].classList.add('is-active');
+  }, 2400);
+})();
+</script>
 </body>
 </html>
