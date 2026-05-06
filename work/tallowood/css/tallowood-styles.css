@@ -1337,3 +1337,11 @@ section {
   .field-row { grid-template-columns: 1fr; }
   .contact-map { height: 360px; }
 }
+
+/* For referring clinics block */
+.referrals-block { background: rgba(21, 128, 61, 0.04); border-left: 3px solid #15803D; padding-left: 1rem; padding-top: 0.75rem; padding-bottom: 0.75rem; margin-top: 0.5rem; }
+.referrals-list { list-style: none; padding: 0; margin: 0.5rem 0 0; display: grid; gap: 0.5rem; }
+.referrals-list li { font-size: 0.95rem; line-height: 1.5; color: #1F2937; padding-left: 1rem; position: relative; }
+.referrals-list li::before { content: "→"; position: absolute; left: 0; color: #15803D; font-weight: 600; }
+.referrals-list a { color: #15803D; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.referrals-list a:hover { color: #166534; }
