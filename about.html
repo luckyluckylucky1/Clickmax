@@ -23,8 +23,20 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="gallery.html">Medical Gallery</a>
-      <a href="gallery-other.html">Other Industries</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Industries
+          <svg class="nav-dropdown-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+        </button>
+        <div class="nav-dropdown-panel" role="menu">
+          <a href="gallery.html" role="menuitem">Medical &amp; Allied Health</a>
+          <a href="gallery-beauty.html" role="menuitem">Beauty &amp; Aesthetics</a>
+          <a href="gallery-hospitality.html" role="menuitem">Hospitality</a>
+          <a href="gallery-trades.html" role="menuitem">Trades &amp; Services</a>
+          <a href="gallery-saas.html" role="menuitem">SaaS &amp; Tech</a>
+          <a href="gallery-retail.html" role="menuitem">Retail &amp; E-commerce</a>
+        </div>
+      </div>
       <a href="pricing.html">Pricing</a>
       <a href="about.html" class="active">About</a>
       <a href="contact.html">Contact</a>
@@ -150,7 +162,7 @@
     <div class="wrap">
       <div class="section-head about-work-head">
         <h2>The businesses we've built for.</h2>
-        <p class="section-lede">A small cross-section — head to the gallery for the full story behind each one.</p>
+        <p class="section-lede">A small cross-section across industries — head to the gallery for the full story behind each one.</p>
       </div>
       <div class="about-work-grid">
         <a href="gallery.html" class="about-work-card">
@@ -191,14 +203,13 @@
         <img class="logo-mark" src="images/logo-mark.png" alt="" width="64" height="64">
         <span class="logo-text">Clickmax</span>
       </a>
-      <p>Custom-coded websites for medical and allied health practices in Melbourne — fully managed, so you never have to touch yours again.</p>
+      <p>Hand-coded custom websites for Australian businesses — fully managed, so you never have to touch yours again.</p>
     </div>
     <div class="footer-cols">
       <div>
         <h4>Site</h4>
         <a href="index.html">Home</a>
-        <a href="gallery.html">Medical Gallery</a>
-      <a href="gallery-other.html">Other Industries</a>
+        <a href="gallery.html">Work</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -217,5 +228,25 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+(function(){
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd) {
+    const trigger = dd.querySelector('.nav-dropdown-trigger');
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = dd.hasAttribute('data-open');
+      dropdowns.forEach(function(d) { d.removeAttribute('data-open'); d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
+      if (!open) { dd.setAttribute('data-open',''); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function() {
+    dropdowns.forEach(function(d) { d.removeAttribute('data-open'); d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') dropdowns.forEach(function(d) { d.removeAttribute('data-open'); d.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
 </body>
 </html>
