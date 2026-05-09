@@ -6299,32 +6299,32 @@ section.how, section.why, section.cta-band {
 }
 
 @media (max-width: 600px) {
+  .hero-medical {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .hero-medical-canvas {
-    min-height: clamp(520px, 100svh, 720px);
+    min-height: 0;
+    height: 52svh;
     padding-bottom: 0;
   }
   .hero-medical-fade {
     background: linear-gradient(
       to bottom,
       rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0) 35%,
-      rgba(255,255,255,0.88) 50%,
-      rgba(255,255,255,1) 58%,
+      rgba(255,255,255,0) 78%,
       rgba(255,255,255,1) 100%
     );
   }
   .hero-medical-content {
-    position: absolute;
-    bottom: 28px;
-    left: 20px;
-    right: 20px;
-    top: auto;
+    position: static;
     transform: none;
     max-width: 100%;
-    padding: 0;
+    padding: clamp(24px, 6vw, 40px) clamp(20px, 5vw, 32px) clamp(32px, 8vw, 56px);
+    background: var(--white);
   }
   .hero-medical-title {
-    font-size: clamp(36px, 10vw, 52px);
+    font-size: clamp(34px, 9vw, 48px);
   }
   .hero-medical-ctas {
     flex-direction: column;
@@ -6332,6 +6332,10 @@ section.how, section.why, section.cta-band {
   .hero-medical-ctas .btn {
     width: 100%;
     justify-content: center;
+  }
+  .hero-medical-tag,
+  .hero-medical-credit {
+    display: none;
   }
 }
 
@@ -6947,4 +6951,87 @@ section.how, section.why, section.cta-band {
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ============================================================
+   GLOBAL MOBILE SWEEP — 480px and below
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  /* NAV */
+  .nav-inner { padding-inline: 16px; }
+
+  /* HERO editor inline CSS handled in index.html */
+
+  /* SPECIALTIES stats */
+  .spec-stat-num { font-size: 28px; }
+  .spec-stat-label { max-width: 100%; text-align: left; margin-left: 8px; }
+
+  /* HK two-card grid */
+  .hk-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hk-card { padding: 24px 20px; }
+  .hk-chart-bars { height: 100px; }
+
+  /* ANY-SIZE — stack progression vertically on very small screens */
+  .any-size-progression {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .any-size-connector {
+    width: 2px;
+    height: 24px;
+    min-width: unset;
+    flex-basis: unset;
+  }
+
+  /* HOW section phone mockup */
+  .how-demo { flex-direction: column; }
+  .how-phone-wrap { max-width: 220px; margin: 0 auto; }
+
+  /* WHY grid */
+  .why-grid { grid-template-columns: 1fr; }
+
+  /* VERSUS table */
+  .versus-table th,
+  .versus-table td { padding: 10px 8px; font-size: 13px; }
+  .versus-table th:first-child,
+  .versus-table td:first-child { font-size: 12px; }
+
+  /* TESTIMONIAL */
+  .testimonial-inner { padding: 28px 20px; }
+
+  /* CTA BAND */
+  .cta-band-inner { padding-inline: 20px; }
+  .cta-band h2 { font-size: clamp(28px, 8vw, 40px); }
+
+  /* FOOTER */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ============================================================
+   GLOBAL MOBILE SWEEP — 640px and below
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+  /* GALLERY featured card */
+  .gallery-featured { grid-template-columns: 1fr; }
+  .gallery-featured-visual { min-height: 220px; }
+  .gallery-featured-meta { padding: 24px 20px; }
+
+  /* SPECIALTIES split */
+  .specialties-split { grid-template-columns: 1fr; gap: 32px; }
+  .specialties-right { position: static; }
+
+  /* SPEC stats label — stack under number on small screens */
+  .spec-stat-top { flex-wrap: wrap; }
+  .spec-stat-label { width: 100%; text-align: left; margin-left: 0; margin-top: 4px; }
+
+  /* HK logos — slightly smaller gap on mobile */
+  .hk-logo { padding: 8px 12px; gap: 7px; }
+  .hk-logo svg { height: 20px; width: 20px; }
+  .hk-logo span { font-size: 12px; }
 }
