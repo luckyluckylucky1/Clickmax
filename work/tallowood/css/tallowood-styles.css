@@ -283,15 +283,35 @@ section {
   .nav.open {
     display: flex;
     position: fixed;
-    inset: 76px 0 0 0;
-    background: var(--white);
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #FFFFFF;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem var(--gutter);
-    gap: 1.75rem;
+    padding: 2rem var(--gutter) 3rem;
+    gap: 0;
+    overflow-y: auto;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 8px 32px rgba(10,15,13,0.12);
+    z-index: 49;
   }
-  .nav.open a { font-size: 1.4rem; }
-  .nav.open .btn { margin-top: 1rem; }
+  .nav.open a {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+    color: var(--ink);
+  }
+  .nav.open a:last-child { border-bottom: none; }
+  .nav.open .btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    border-bottom: none;
+  }
   .menu-toggle { display: block; }
   .menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .menu-toggle.open span:nth-child(2) { opacity: 0; }
@@ -754,15 +774,10 @@ section {
 }
 
 @media (max-width: 880px) {
-  .services-head { grid-template-columns: 1fr; gap: 1.5rem; }
   .service-list { grid-template-columns: 1fr; gap: 0; }
   .service-row { padding: 1.5rem 0; }
   .service-row:hover { padding-left: 0; }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .cta-actions { justify-self: stretch; min-width: 0; }
-  .hero-meta-item .num { font-size: 1.4rem; }
-}
+
 .page-hero {
   background: var(--white);
   padding: clamp(4rem, 8vw, 6rem) 0 clamp(2.5rem, 4vw, 4rem);
@@ -965,7 +980,6 @@ section {
 @media (max-width: 880px) {
   .physio-grid { grid-template-columns: 1fr; gap: 3rem; }
   .reception-grid { grid-template-columns: 1fr; }
-  .reception-card { flex-direction: column; text-align: center; }
 }
 .services-list {
   background: var(--white);
@@ -1333,9 +1347,7 @@ section {
 }
 
 @media (max-width: 880px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .field-row { grid-template-columns: 1fr; }
-  .contact-map { height: 360px; }
+  .footer-bottom { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 /* For referring clinics block */
@@ -1345,3 +1357,158 @@ section {
 .referrals-list li::before { content: "→"; position: absolute; left: 0; color: #15803D; font-weight: 600; }
 .referrals-list a { color: #15803D; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .referrals-list a:hover { color: #166534; }
+
+/* =====================
+   MOBILE — full sweep
+   ===================== */
+@media (max-width: 880px) {
+
+  /* Hero */
+  .hero {
+    min-height: 100svh;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+
+  .hero .wrap {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+    justify-content: space-between;
+    min-height: 100svh;
+    min-height: 100vh;
+  }
+
+  .hero-inner {
+    padding: 1rem 0;
+    justify-content: flex-start;
+    flex: unset;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+    margin: 1rem 0 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-cta .btn { width: 100%; justify-content: center; }
+
+  .hero-meta {
+    margin-top: 2rem;
+  }
+
+  .hero-meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-meta-item .num { font-size: 1.5rem; }
+  .hero-meta-item .lbl { font-size: 0.68rem; }
+
+  /* Services head */
+  .services-head {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* About section */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-img-wrap {
+    aspect-ratio: 3 / 2;
+    max-height: 340px;
+  }
+
+  .about-cred {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Team */
+  .physio-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 420px;
+  }
+
+  .physio-img { aspect-ratio: 3 / 2; }
+
+  .reception-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .reception-card {
+    flex-direction: row;
+  }
+
+  .reception-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* CTA */
+  .cta-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .cta-actions {
+    justify-self: stretch;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .cta-actions .btn { width: 100%; justify-content: center; }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .field-row { grid-template-columns: 1fr; }
+
+  .contact-map { height: 300px; }
+
+  /* Footer */
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+
+  .hero-meta-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-img-wrap {
+    aspect-ratio: 4 / 3;
+    max-height: 260px;
+  }
+
+  .physio-grid { max-width: 100%; }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
