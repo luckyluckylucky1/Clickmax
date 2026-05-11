@@ -11,230 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2">
-<style>
-/* ── HERO LIVE EDITOR ─────────────────────────────── */
-.hero-live-editor {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: #0d0e1a;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* top bar */
-.hle-topbar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 18px;
-  height: 36px;
-  background: #111220;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  flex-shrink: 0;
-}
-
-.hle-tab {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 0 12px;
-  height: 100%;
-  border-bottom: 2px solid #FF5A45;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.01em;
-}
-
-.hle-tab-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #FF5A45;
-  flex-shrink: 0;
-}
-
-.hle-topbar-right {
-  margin-left: auto;
-  display: flex;
-  gap: 16px;
-}
-
-.hle-topbar-right span {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10px;
-  color: rgba(255,255,255,0.18);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* editor body */
-.hle-body {
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.hle-gutter {
-  width: 48px;
-  flex-shrink: 0;
-  padding: 16px 0;
-  background: #0d0e1a;
-  border-right: 1px solid rgba(255,255,255,0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 12px;
-  overflow: hidden;
-}
-
-.hle-gutter-num {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
-  line-height: 1.72;
-  color: rgba(255,255,255,0.12);
-  white-space: nowrap;
-}
-
-.hle-gutter-num.active {
-  color: rgba(255,255,255,0.4);
-}
-
-.hle-code-area {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-.hle-code-scroll {
-  position: absolute;
-  inset: 0;
-  padding: 16px 24px 120px 20px;
-  overflow: hidden;
-}
-
-.hle-pre {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: clamp(11px, 1.1vw, 14px);
-  line-height: 1.72;
-  color: #c9cbe0;
-  margin: 0;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.hle-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: rgba(255,255,255,0.65);
-  vertical-align: -1px;
-  margin-left: 1px;
-  animation: hleBlink 1.1s ease-in-out infinite;
-}
-
-.hle-cursor.off { display: none; }
-
-@keyframes hleBlink {
-  0%, 45% { opacity: 1; }
-  55%, 100% { opacity: 0; }
-}
-
-/* syntax */
-.ht { color: #7cb9f4; }
-.ha { color: #e8c97a; }
-.hs { color: #98d4a3; }
-.hc { color: rgba(255,255,255,0.22); font-style: italic; }
-.hv { color: #c9a4f0; }
-
-/* status bar */
-.hle-statusbar {
-  height: 24px;
-  flex-shrink: 0;
-  background: #FF5A45;
-  display: flex;
-  align-items: center;
-  padding: 0 18px;
-  gap: 20px;
-}
-
-.hle-status-item {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10px;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.06em;
-  font-weight: 600;
-}
-
-.hle-status-item.dim {
-  color: rgba(255,255,255,0.55);
-  font-weight: 400;
-}
-
-/* preview — fades in over the editor */
-.hle-preview {
-  position: absolute;
-  inset: 0;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
-  pointer-events: none;
-}
-
-.hle-preview.show {
-  opacity: 1;
-  transform: none;
-}
-
-.hle-browser-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
-  background: #f0f0f5;
-  border-bottom: 1px solid #e0e0e8;
-  flex-shrink: 0;
-}
-
-.hle-browser-url {
-  flex: 1;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10px;
-  color: #636578;
-  background: #fff;
-  border: 1px solid #dddde8;
-  border-radius: 4px;
-  padding: 4px 12px;
-}
-
-.hle-browser-body {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-}
-
-/* ── PREVIEW CANVAS ── */
-.hle-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 600px) {
-  .hle-pre { font-size: 9.5px; line-height: 1.5; }
-  .hle-gutter { width: 32px; padding-right: 6px; }
-  .hle-gutter-num { font-size: 8.5px; }
-  .hle-topbar-right span { display: none; }
-  .hle-statusbar { font-size: 9px; gap: 8px; }
-}
-</style>
+<link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -264,7 +41,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn btn-primary nav-cta">Start a project</a>
+    <a href="contact.html" class="btn btn-cta nav-cta">Get Started →</a>
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -273,161 +50,151 @@
 
 <main>
 
-  <section class="hero-medical">
-
-    <div class="hero-medical-canvas">
-
-      <div class="hero-live-editor" aria-hidden="true">
-
-        <div class="hle-topbar">
-          <div class="hle-tab">
-            <span class="hle-tab-dot"></span>
-            <span id="hleFilename">index.html</span>
-          </div>
-          <div class="hle-topbar-right">
-            <span>HTML</span>
-            <span>UTF-8</span>
-          </div>
-        </div>
-
-        <div class="hle-body">
-          <div class="hle-gutter" id="hleGutter"></div>
-          <div class="hle-code-area">
-            <div class="hle-code-scroll" id="hleScroll">
-              <pre class="hle-pre" id="hleTyped"></pre>
-            </div>
-          </div>
-        </div>
-
-        <div class="hle-statusbar">
-          <span class="hle-status-item" id="hleStatusMode">INSERT</span>
-          <span class="hle-status-item dim" id="hleStatusLine">Ln 1, Col 1</span>
-          <span class="hle-status-item dim" id="hleStatusMsg">typing…</span>
-        </div>
-
-      </div>
-
-      <div class="hero-medical-fade"></div>
-
-      <svg class="hero-medical-star hero-medical-star-1" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
-      <svg class="hero-medical-star hero-medical-star-2" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
-      <svg class="hero-medical-star hero-medical-star-3" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
-      <svg class="hero-medical-star hero-medical-star-4" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
-      <svg class="hero-medical-star hero-medical-star-5" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13 Z" fill="currentColor"/></svg>
-
-      <div class="hero-medical-content">
-        <div class="hero-medical-eyebrow">Custom websites for Australian businesses</div>
-
-        <h1 class="hero-medical-title">
-          Websites built<br>
-          from scratch.<br>
-          <em>Not a template.</em>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">
+          More Clicks.<br>
+          More Customers.<br>
+          <em>Max Results.</em>
         </h1>
-
-        <p class="hero-medical-body">
-          Every Clickmax site starts as an empty file. We write every line of HTML, CSS, and JavaScript — shaped around your brand, your industry, and how your customers actually use the web.
-        </p>
-
-        <div class="hero-medical-badges">
-          <div class="hero-medical-badge">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 4.5 L8 2 L13 4.5 V8.5 C13 11 10.5 13 8 14 C5.5 13 3 11 3 8.5 Z"/>
-              <path d="M5.5 8 L7 9.5 L10.5 6"/>
-            </svg>
-            <span>100% hand-coded</span>
-          </div>
-          <div class="hero-medical-badge">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="8" cy="8" r="6"/>
-              <path d="M8 4.5 V8 L10.5 9.5"/>
-            </svg>
-            <span>Sub-1s load times</span>
-          </div>
-          <div class="hero-medical-badge">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2 12 V4 H14 V12 Z"/>
-              <path d="M2 6 H14"/>
-              <path d="M5 9 H7 M9 9 H11"/>
-            </svg>
-            <span>Fully managed</span>
-          </div>
-        </div>
-
-        <div class="hero-medical-ctas">
-          <a href="contact.html" class="btn btn-primary">Start a project →</a>
-          <a href="work/tallowood/tallowood-index.html" class="btn btn-ghost">See a live demo →</a>
-        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <img src="images/logo-mark.png" alt="" class="hero-mark-img">
       </div>
     </div>
-
   </section>
 
+  <!-- BUILT FOR ANY BUSINESS -->
   <section class="specialties">
     <div class="wrap">
+      <div class="specialties-eyebrow reveal">Built for any business</div>
       <div class="specialties-split">
 
         <div class="specialties-left">
-          <h2 class="specialties-h2">Built for any business that takes their website seriously.</h2>
-          <p class="specialties-body">Whether you're a solo operator or a growing company, every site gets the same hand-coded craft. We've built across a wide range of industries — and we'll adapt to yours.</p>
+          <h2 class="specialties-h2 reveal">Built for any business that takes their website <em>seriously.</em></h2>
+          <p class="specialties-body reveal">Whether you're a solo operator or a growing company, every site gets the same hand-coded craft. We've built across a wide range of industries — and we'll adapt to yours.</p>
 
-          <div class="spec-stats">
-
+          <div class="spec-stats reveal reveal-stagger">
             <div class="spec-stat">
               <div class="spec-stat-top">
-                <span class="spec-stat-num" data-target="97">0</span><span class="spec-stat-unit">/100</span>
+                <div class="spec-stat-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22a10 10 0 1 0-10-10"/>
+                    <path d="M12 12L17 7"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="spec-stat-num-wrap"><span class="spec-stat-num" data-target="97">0</span><span class="spec-stat-unit">/100</span></div>
                 <span class="spec-stat-label">PageSpeed score</span>
               </div>
               <div class="spec-stat-bar"><div class="spec-stat-fill" data-width="97"></div></div>
               <p class="spec-stat-note">Custom hand-coded sites consistently score 95–100 on Google Core Web Vitals. Templates average 20–40.</p>
             </div>
-
             <div class="spec-stat">
               <div class="spec-stat-top">
-                <span class="spec-stat-num" data-target="53">0</span><span class="spec-stat-unit">%</span>
+                <div class="spec-stat-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="6" y="2" width="12" height="20" rx="2"/>
+                    <line x1="12" y1="18" x2="12" y2="18"/>
+                  </svg>
+                </div>
+                <div class="spec-stat-num-wrap"><span class="spec-stat-num" data-target="53">0</span><span class="spec-stat-unit">%</span></div>
                 <span class="spec-stat-label">Mobile abandonment at 3s load</span>
               </div>
               <div class="spec-stat-bar"><div class="spec-stat-fill" data-width="53"></div></div>
               <p class="spec-stat-note">Over half of mobile visitors leave if your site takes more than 3 seconds. Ours load in under 1.</p>
             </div>
-
             <div class="spec-stat">
               <div class="spec-stat-top">
-                <span class="spec-stat-num" data-target="20">0</span><span class="spec-stat-unit">%</span>
+                <div class="spec-stat-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+                    <polyline points="17 18 23 18 23 12"/>
+                  </svg>
+                </div>
+                <div class="spec-stat-num-wrap"><span class="spec-stat-num" data-target="20">0</span><span class="spec-stat-unit">%</span></div>
                 <span class="spec-stat-label">Conversion drop per second of delay</span>
               </div>
               <div class="spec-stat-bar"><div class="spec-stat-fill" data-width="20"></div></div>
-              <p class="spec-stat-note">Google's data: each additional second of load time costs you 20% of conversions. Speed isn't a nice-to-have.</p>
+              <p class="spec-stat-note">Google's data: each additional second of load time costs you 20% of conversions.</p>
             </div>
-
             <div class="spec-stat">
               <div class="spec-stat-top">
-                <span class="spec-stat-num" data-target="40">0</span><span class="spec-stat-unit">%</span>
+                <div class="spec-stat-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                    <polyline points="17 6 23 6 23 12"/>
+                  </svg>
+                </div>
+                <div class="spec-stat-num-wrap"><span class="spec-stat-num" data-target="40">0</span><span class="spec-stat-unit">%</span></div>
                 <span class="spec-stat-label">Average conversion uplift vs templates</span>
               </div>
               <div class="spec-stat-bar"><div class="spec-stat-fill" data-width="40"></div></div>
-              <p class="spec-stat-note">Businesses switching from template to custom sites see 20–40% better conversion rates on the same traffic.</p>
+              <p class="spec-stat-note">Businesses switching from template to custom sites see 20–40% better conversion rates.</p>
             </div>
-
           </div>
         </div>
 
         <div class="specialties-right">
-          <div class="specialties-industry-card">
+          <div class="specialties-industry-card reveal">
             <div class="specialties-industry-label">Industries we've built for</div>
-            <div class="specialties-industry-list">
-              <span>Medical &amp; Allied Health</span>
-              <span>Beauty &amp; Aesthetics</span>
-              <span>Hospitality &amp; Cafés</span>
-              <span>Trades &amp; Services</span>
-              <span>SaaS &amp; Tech</span>
-              <span>Retail &amp; E-commerce</span>
-              <span>Fitness &amp; Wellness</span>
-              <span>Professional Services</span>
-              <span>Real Estate</span>
-              <span>Events &amp; Entertainment</span>
-              <span>Education &amp; Coaching</span>
-              <span>Construction &amp; Architecture</span>
-              <span>Non-profits</span>
+            <div class="specialties-industry-grid">
+
+              <a href="gallery.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                <span>Medical &amp; Allied Health</span>
+              </a>
+              <a href="gallery-beauty.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 3-5 11-5 11S7 10 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+                <span>Beauty &amp; Aesthetics</span>
+              </a>
+              <a href="gallery-hospitality.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+                <span>Hospitality &amp; Cafés</span>
+              </a>
+              <a href="gallery-trades.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                <span>Trades &amp; Services</span>
+              </a>
+              <a href="gallery-saas.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                <span>SaaS &amp; Tech</span>
+              </a>
+              <a href="gallery-retail.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+                <span>Retail &amp; E-commerce</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+                <span>Fitness &amp; Wellness</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+                <span>Professional Services</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <span>Real Estate</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <span>Events &amp; Entertainment</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                <span>Education &amp; Coaching</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="20" rx="1"/><rect x="10" y="8" width="6" height="14" rx="1"/><rect x="18" y="5" width="6" height="17" rx="1"/></svg></div>
+                <span>Construction &amp; Architecture</span>
+              </a>
+              <a href="contact.html" class="ind-item">
+                <div class="ind-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <span>Non-profits</span>
+              </a>
+
             </div>
             <a href="contact.html" class="specialties-industry-foot">Your industry not listed? <strong>Get in touch →</strong></a>
           </div>
@@ -437,16 +204,16 @@
     </div>
   </section>
 
+  <!-- ANY SIZE DARK BAND -->
   <section class="any-size">
     <div class="wrap">
-      <div class="any-size-head">
-        <h2>From solo operators<br><em>to growing companies.</em></h2>
-        <p>
-          We don't have a "small business" track and an "enterprise" track. Every site gets the same hands-on craft — only the scope changes.
-        </p>
+      <div class="any-size-head reveal">
+        <div class="any-size-eyebrow">We work with</div>
+        <h2>From solo operators <em>to growing companies.</em></h2>
+        <p>We don't have a "small business" track and an "enterprise" track. Every site gets the same hands-on craft — only the scope changes.</p>
       </div>
 
-      <div class="any-size-progression">
+      <div class="any-size-progression reveal reveal-stagger">
         <div class="any-size-step any-size-step-sm">
           <div class="any-size-icon-wrap">
             <svg class="any-size-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -457,6 +224,7 @@
             </svg>
           </div>
           <div class="any-size-step-label">Solo operator</div>
+          <div class="any-size-step-sub">You wear all the hats. We'll help you look like you have a team.</div>
         </div>
 
         <div class="any-size-connector"></div>
@@ -471,6 +239,7 @@
             </svg>
           </div>
           <div class="any-size-step-label">Established business</div>
+          <div class="any-size-step-sub">You're growing. We build systems that scale with you.</div>
         </div>
 
         <div class="any-size-connector"></div>
@@ -487,14 +256,16 @@
             </svg>
           </div>
           <div class="any-size-step-label">Multi-site group</div>
+          <div class="any-size-step-sub">Multiple locations, one web partner. Consistent. Scalable. Fast.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- INTEGRATIONS + SPEED -->
   <section class="hk">
     <div class="wrap">
-      <div class="hk-grid">
+      <div class="hk-grid reveal reveal-stagger">
 
         <div class="hk-card">
           <div class="hk-card-label">Integrations that fit your workflow</div>
@@ -502,83 +273,6 @@
           <p class="hk-card-p">Booking systems, payment links, maps, live chat, CRMs — wired directly in. We never tell you to switch platforms.</p>
           <div class="hk-logos-wrap">
             <div class="hk-logos-track" id="hkLogosTrack">
-
-              <!-- Stripe -->
-              <div class="hk-logo" title="Stripe">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Stripe" height="24"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-1.5 22.5c-2.1 0-3.9-.7-5.2-2l1.3-2.3c.9.8 2 1.3 3.4 1.3.9 0 1.4-.3 1.4-.8s-.4-.8-1.8-1.2c-2-.6-4.3-1.3-4.3-3.9 0-2.8 2.2-4 4.6-4 1.7 0 3.2.5 4.3 1.4l-1.4 2.4c-.8-.6-1.8-1-2.9-1-.7 0-1.1.2-1.1.7 0 .5.5.7 2 1.2 2.1.6 4.1 1.4 4.1 4 0 2.8-2 4.2-4.4 4.2z" fill="#635BFF"/></svg>
-              <span>Stripe</span></div>
-
-              <!-- Shopify -->
-              <div class="hk-logo" title="Shopify">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Shopify" height="24"><path d="M27.3 6.7c0-.1-.1-.2-.2-.2-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.4-.1-.5-.1L22.5 5c-.3-.7-.7-1.4-1.5-1.4h-.1c-.3-.5-.7-.7-1.1-.7-2.8 0-4.1 3.5-4.6 5.2l-2 .6c-.6.2-.6.2-.7.7L11 27.5l10.3 1.9 5.6-1.2c0 0 .4-21.4.4-21.5zM21.7 5.3c.5 0 .8.3 1 .7-.4.1-.9.3-1.4.5.3-1 .7-1.2 1-1.2H21.7zM20.5 8.4l-1.7.5c.5-1.8 1.4-2.7 2.2-3.1-.3.6-.4 1.6-.5 2.6zM19.4 4.3c.1 0 .2 0 .3.1-1 .6-2 1.7-2.4 4l-1.4.4c.4-1.5 1.5-4.5 3.5-4.5z" fill="#95BF47"/><path d="M27.1 6.5c-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.1-.1-.2-.1v18.4l5.6-1.2s-2.4-15.7-2.5-15.8z" fill="#5E8E3E"/><path d="M20 10.2l-.7 2.6s-.7-.4-1.7-.3c-1.4.1-1.4.9-1.4 1.1.1 1.3 3.4 1.5 3.5 4.4.1 2.3-1.2 3.8-3.1 3.9-2.3.1-3.6-1.2-3.6-1.2l.5-2.1s1.3 1 2.3.9c.7-.1.9-.6.9-1-.1-1.6-2.8-1.5-2.9-4.1-.1-2.2 1.3-4.4 4.5-4.6 1.2-.1 1.7.4 1.7.4z" fill="#fff"/></svg>
-              <span>Shopify</span></div>
-
-              <!-- Google Maps -->
-              <div class="hk-logo" title="Google Maps">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Google Maps" height="24"><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18s10-10.3 10-18c0-5.5-4.5-10-10-10z" fill="#EA4335"/><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18V2z" fill="#FBBC04"/><path d="M16 2C10.5 2 6 6.5 6 12c0 3.5 1.8 6.6 4.5 8.5L16 2z" fill="#4285F4"/><circle cx="16" cy="12" r="4" fill="white"/></svg>
-              <span>Google Maps</span></div>
-
-              <!-- Calendly -->
-              <div class="hk-logo" title="Calendly">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Calendly" height="24"><rect x="2" y="4" width="28" height="25" rx="5" fill="#006BFF"/><rect x="9" y="1" width="4" height="7" rx="2" fill="#006BFF"/><rect x="19" y="1" width="4" height="7" rx="2" fill="#006BFF"/><path d="M2 13h28" stroke="white" stroke-width="2"/><rect x="8" y="18" width="5" height="5" rx="1.5" fill="white"/><rect x="18" y="18" width="5" height="5" rx="1.5" fill="white"/></svg>
-              <span>Calendly</span></div>
-
-              <!-- HotDoc -->
-              <div class="hk-logo" title="HotDoc">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="HotDoc" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#E8380D"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg>
-              <span>HotDoc</span></div>
-
-              <!-- Cliniko -->
-              <div class="hk-logo" title="Cliniko">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Cliniko" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#00A79D"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg>
-              <span>Cliniko</span></div>
-
-              <!-- Mailchimp -->
-              <div class="hk-logo" title="Mailchimp">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Mailchimp" height="24"><circle cx="16" cy="16" r="16" fill="#FFE01B"/><path d="M10 13c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#241C15" stroke-width="1.8" fill="none" stroke-linecap="round"/><ellipse cx="16" cy="20" rx="6" ry="5" fill="#241C15"/><circle cx="12.5" cy="16" r="1.4" fill="#FFE01B"/><circle cx="19.5" cy="16" r="1.4" fill="#FFE01B"/><path d="M13 23.5c.8.6 5.2.6 6 0" stroke="#FFE01B" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
-              <span>Mailchimp</span></div>
-
-              <!-- Stripe (wordmark horizontal) -->
-              <div class="hk-logo" title="Square">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Square" height="24"><rect x="1" y="1" width="30" height="30" rx="6" fill="#3E4348"/><rect x="9" y="9" width="14" height="14" rx="2.5" fill="white"/></svg>
-              <span>Square</span></div>
-
-              <!-- Afterpay -->
-              <div class="hk-logo" title="Afterpay">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Afterpay" height="24"><circle cx="16" cy="16" r="16" fill="#B2FCE4"/><path d="M9 16l5 5 9-9" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-              <span>Afterpay</span></div>
-
-              <!-- Xero -->
-              <div class="hk-logo" title="Xero">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Xero" height="24"><circle cx="16" cy="16" r="16" fill="#13B5EA"/><path d="M10 12l6 4-6 4M16 12l6 4-6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-              <span>Xero</span></div>
-
-              <!-- Zoom -->
-              <div class="hk-logo" title="Zoom">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Zoom" height="24"><rect x="1" y="7" width="22" height="18" rx="5" fill="#2D8CFF"/><path d="M23 13l8-5v16l-8-5V13z" fill="#2D8CFF"/></svg>
-              <span>Zoom</span></div>
-
-              <!-- Halaxy -->
-              <div class="hk-logo" title="Halaxy">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Halaxy" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#7C3AED"/><rect x="7" y="9" width="7" height="15" rx="2" fill="white"/><rect x="14" y="17" width="7" height="7" rx="2" fill="white"/></svg>
-              <span>Halaxy</span></div>
-
-              <!-- Typeform -->
-              <div class="hk-logo" title="Typeform">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Typeform" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#262627"/><path d="M9 11h14M16 11v12" stroke="white" stroke-width="3" stroke-linecap="round"/></svg>
-              <span>Typeform</span></div>
-
-              <!-- Google Analytics -->
-              <div class="hk-logo" title="Google Analytics">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Google Analytics" height="24"><rect x="20" y="4" width="9" height="24" rx="3" fill="#F9AB00"/><rect x="7" y="14" width="9" height="14" rx="3" fill="#E37400"/></svg>
-              <span>Google Analytics</span></div>
-
-              <!-- HealthEngine -->
-              <div class="hk-logo" title="HealthEngine">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="HealthEngine" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#0070D2"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg>
-              <span>HealthEngine</span></div>
-
-              <!-- SET 2 — identical copy for seamless loop -->
               <div class="hk-logo" title="Stripe"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-1.5 22.5c-2.1 0-3.9-.7-5.2-2l1.3-2.3c.9.8 2 1.3 3.4 1.3.9 0 1.4-.3 1.4-.8s-.4-.8-1.8-1.2c-2-.6-4.3-1.3-4.3-3.9 0-2.8 2.2-4 4.6-4 1.7 0 3.2.5 4.3 1.4l-1.4 2.4c-.8-.6-1.8-1-2.9-1-.7 0-1.1.2-1.1.7 0 .5.5.7 2 1.2 2.1.6 4.1 1.4 4.1 4 0 2.8-2 4.2-4.4 4.2z" fill="#635BFF"/></svg><span>Stripe</span></div>
               <div class="hk-logo" title="Shopify"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M27.3 6.7c0-.1-.1-.2-.2-.2-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.4-.1-.5-.1L22.5 5c-.3-.7-.7-1.4-1.5-1.4h-.1c-.3-.5-.7-.7-1.1-.7-2.8 0-4.1 3.5-4.6 5.2l-2 .6c-.6.2-.6.2-.7.7L11 27.5l10.3 1.9 5.6-1.2c0 0 .4-21.4.4-21.5zM21.7 5.3c.5 0 .8.3 1 .7-.4.1-.9.3-1.4.5.3-1 .7-1.2 1-1.2H21.7zM20.5 8.4l-1.7.5c.5-1.8 1.4-2.7 2.2-3.1-.3.6-.4 1.6-.5 2.6zM19.4 4.3c.1 0 .2 0 .3.1-1 .6-2 1.7-2.4 4l-1.4.4c.4-1.5 1.5-4.5 3.5-4.5z" fill="#95BF47"/><path d="M27.1 6.5c-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.1-.1-.2-.1v18.4l5.6-1.2s-2.4-15.7-2.5-15.8z" fill="#5E8E3E"/><path d="M20 10.2l-.7 2.6s-.7-.4-1.7-.3c-1.4.1-1.4.9-1.4 1.1.1 1.3 3.4 1.5 3.5 4.4.1 2.3-1.2 3.8-3.1 3.9-2.3.1-3.6-1.2-3.6-1.2l.5-2.1s1.3 1 2.3.9c.7-.1.9-.6.9-1-.1-1.6-2.8-1.5-2.9-4.1-.1-2.2 1.3-4.4 4.5-4.6 1.2-.1 1.7.4 1.7.4z" fill="#fff"/></svg><span>Shopify</span></div>
               <div class="hk-logo" title="Google Maps"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18s10-10.3 10-18c0-5.5-4.5-10-10-10z" fill="#EA4335"/><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18V2z" fill="#FBBC04"/><path d="M16 2C10.5 2 6 6.5 6 12c0 3.5 1.8 6.6 4.5 8.5L16 2z" fill="#4285F4"/><circle cx="16" cy="12" r="4" fill="white"/></svg><span>Google Maps</span></div>
@@ -594,7 +288,22 @@
               <div class="hk-logo" title="Typeform"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#262627"/><path d="M9 11h14M16 11v12" stroke="white" stroke-width="3" stroke-linecap="round"/></svg><span>Typeform</span></div>
               <div class="hk-logo" title="Google Analytics"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="20" y="4" width="9" height="24" rx="3" fill="#F9AB00"/><rect x="7" y="14" width="9" height="14" rx="3" fill="#E37400"/></svg><span>Google Analytics</span></div>
               <div class="hk-logo" title="HealthEngine"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#0070D2"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg><span>HealthEngine</span></div>
-
+              <!-- Set 2 for loop -->
+              <div class="hk-logo" title="Stripe"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-1.5 22.5c-2.1 0-3.9-.7-5.2-2l1.3-2.3c.9.8 2 1.3 3.4 1.3.9 0 1.4-.3 1.4-.8s-.4-.8-1.8-1.2c-2-.6-4.3-1.3-4.3-3.9 0-2.8 2.2-4 4.6-4 1.7 0 3.2.5 4.3 1.4l-1.4 2.4c-.8-.6-1.8-1-2.9-1-.7 0-1.1.2-1.1.7 0 .5.5.7 2 1.2 2.1.6 4.1 1.4 4.1 4 0 2.8-2 4.2-4.4 4.2z" fill="#635BFF"/></svg><span>Stripe</span></div>
+              <div class="hk-logo" title="Shopify"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M27.3 6.7c0-.1-.1-.2-.2-.2-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.4-.1-.5-.1L22.5 5c-.3-.7-.7-1.4-1.5-1.4h-.1c-.3-.5-.7-.7-1.1-.7-2.8 0-4.1 3.5-4.6 5.2l-2 .6c-.6.2-.6.2-.7.7L11 27.5l10.3 1.9 5.6-1.2c0 0 .4-21.4.4-21.5zM21.7 5.3c.5 0 .8.3 1 .7-.4.1-.9.3-1.4.5.3-1 .7-1.2 1-1.2H21.7zM20.5 8.4l-1.7.5c.5-1.8 1.4-2.7 2.2-3.1-.3.6-.4 1.6-.5 2.6zM19.4 4.3c.1 0 .2 0 .3.1-1 .6-2 1.7-2.4 4l-1.4.4c.4-1.5 1.5-4.5 3.5-4.5z" fill="#95BF47"/><path d="M27.1 6.5c-.1 0-1.7-.1-1.7-.1s-1.1-1.1-1.2-1.2c-.1-.1-.1-.1-.2-.1v18.4l5.6-1.2s-2.4-15.7-2.5-15.8z" fill="#5E8E3E"/><path d="M20 10.2l-.7 2.6s-.7-.4-1.7-.3c-1.4.1-1.4.9-1.4 1.1.1 1.3 3.4 1.5 3.5 4.4.1 2.3-1.2 3.8-3.1 3.9-2.3.1-3.6-1.2-3.6-1.2l.5-2.1s1.3 1 2.3.9c.7-.1.9-.6.9-1-.1-1.6-2.8-1.5-2.9-4.1-.1-2.2 1.3-4.4 4.5-4.6 1.2-.1 1.7.4 1.7.4z" fill="#fff"/></svg><span>Shopify</span></div>
+              <div class="hk-logo" title="Google Maps"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18s10-10.3 10-18c0-5.5-4.5-10-10-10z" fill="#EA4335"/><path d="M16 2C10.5 2 6 6.5 6 12c0 7.7 10 18 10 18V2z" fill="#FBBC04"/><path d="M16 2C10.5 2 6 6.5 6 12c0 3.5 1.8 6.6 4.5 8.5L16 2z" fill="#4285F4"/><circle cx="16" cy="12" r="4" fill="white"/></svg><span>Google Maps</span></div>
+              <div class="hk-logo" title="Calendly"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="2" y="4" width="28" height="25" rx="5" fill="#006BFF"/><rect x="9" y="1" width="4" height="7" rx="2" fill="#006BFF"/><rect x="19" y="1" width="4" height="7" rx="2" fill="#006BFF"/><path d="M2 13h28" stroke="white" stroke-width="2"/><rect x="8" y="18" width="5" height="5" rx="1.5" fill="white"/><rect x="18" y="18" width="5" height="5" rx="1.5" fill="white"/></svg><span>Calendly</span></div>
+              <div class="hk-logo" title="HotDoc"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#E8380D"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg><span>HotDoc</span></div>
+              <div class="hk-logo" title="Cliniko"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#00A79D"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg><span>Cliniko</span></div>
+              <div class="hk-logo" title="Mailchimp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><circle cx="16" cy="16" r="16" fill="#FFE01B"/><path d="M10 13c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#241C15" stroke-width="1.8" fill="none" stroke-linecap="round"/><ellipse cx="16" cy="20" rx="6" ry="5" fill="#241C15"/><circle cx="12.5" cy="16" r="1.4" fill="#FFE01B"/><circle cx="19.5" cy="16" r="1.4" fill="#FFE01B"/><path d="M13 23.5c.8.6 5.2.6 6 0" stroke="#FFE01B" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg><span>Mailchimp</span></div>
+              <div class="hk-logo" title="Square"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="6" fill="#3E4348"/><rect x="9" y="9" width="14" height="14" rx="2.5" fill="white"/></svg><span>Square</span></div>
+              <div class="hk-logo" title="Afterpay"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><circle cx="16" cy="16" r="16" fill="#B2FCE4"/><path d="M9 16l5 5 9-9" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Afterpay</span></div>
+              <div class="hk-logo" title="Xero"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><circle cx="16" cy="16" r="16" fill="#13B5EA"/><path d="M10 12l6 4-6 4M16 12l6 4-6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Xero</span></div>
+              <div class="hk-logo" title="Zoom"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="7" width="22" height="18" rx="5" fill="#2D8CFF"/><path d="M23 13l8-5v16l-8-5V13z" fill="#2D8CFF"/></svg><span>Zoom</span></div>
+              <div class="hk-logo" title="Halaxy"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#7C3AED"/><rect x="7" y="9" width="7" height="15" rx="2" fill="white"/><rect x="14" y="17" width="7" height="7" rx="2" fill="white"/></svg><span>Halaxy</span></div>
+              <div class="hk-logo" title="Typeform"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#262627"/><path d="M9 11h14M16 11v12" stroke="white" stroke-width="3" stroke-linecap="round"/></svg><span>Typeform</span></div>
+              <div class="hk-logo" title="Google Analytics"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="20" y="4" width="9" height="24" rx="3" fill="#F9AB00"/><rect x="7" y="14" width="9" height="14" rx="3" fill="#E37400"/></svg><span>Google Analytics</span></div>
+              <div class="hk-logo" title="HealthEngine"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="24"><rect x="1" y="1" width="30" height="30" rx="7" fill="#0070D2"/><path d="M16 8v16M8 16h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/></svg><span>HealthEngine</span></div>
             </div>
           </div>
         </div>
@@ -636,165 +345,16 @@
     </div>
   </section>
 
-  <section class="how">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Your site, fully managed.</h2>
-        <p class="section-lede">Tell us what you want changed, added, or built from scratch. We take it from there.</p>
-      </div>
-
-      <div class="demo" data-demo>
-        <div class="demo-split">
-          <div class="demo-right">
-            <div class="demo-phone">
-              <div class="demo-phone-notch"></div>
-              <div class="demo-phone-header">
-                <div class="demo-phone-avatar demo-phone-avatar-cm" data-demo-avatar>C</div>
-                <div>
-                  <strong data-demo-name>Clickmax</strong>
-                  <span class="demo-phone-sub" data-demo-client-sub>Online</span>
-                </div>
-              </div>
-              <div class="demo-phone-body" data-demo-messages></div>
-            </div>
-
-            <div class="demo-toast" data-demo-toast>
-              <div class="demo-toast-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="demo-toast-body">
-                <strong>Your site is ready.</strong>
-                <span>Take a look ↓</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="demo-left">
-            <div class="demo-chat" data-demo-chat>
-              <div class="demo-chat-header">
-                <span class="demo-chat-status"></span>
-                <strong>Clickmax</strong>
-                <span class="demo-chat-sub">replying…</span>
-              </div>
-              <div class="demo-chat-body" data-demo-reply></div>
-            </div>
-
-            <div class="demo-code" data-demo-code-block>
-              <div class="demo-code-header">
-                <span class="demo-code-file" data-demo-file>index.html</span>
-                <div class="demo-code-window">
-                  <span class="demo-code-min">_</span>
-                  <span class="demo-code-close">×</span>
-                </div>
-              </div>
-              <pre class="demo-code-body" data-demo-code></pre>
-            </div>
-
-            <div class="demo-site" data-demo-site>
-              <div class="demo-site-chrome">
-                <div class="demo-site-url" data-demo-url>brewhaus.cafe</div>
-                <div class="demo-code-window">
-                  <span class="demo-code-min">_</span>
-                  <span class="demo-code-close">×</span>
-                </div>
-              </div>
-              <div class="demo-site-viewport" data-demo-viewport></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-hint">
-          <span class="demo-hint-dot"></span>
-          <span>Hover to pause</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="why">
-    <div class="wrap">
-      <div class="section-head why-head">
-        <div class="why-eyebrow">Why Clickmax</div>
-        <h2>For business owners who'd rather serve customers than wrestle with their website.</h2>
-        <p class="section-lede">Most small business sites are built on WordPress, half-finished by a relative, or stitched together from a Wix template. Then they break, slow down, and quietly cost you customers. We do the opposite — write every line ourselves, and look after it forever.</p>
-        <div class="why-flourish">
-          <svg viewBox="0 0 140 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M1 7 Q 20 1, 40 7 T 80 7 T 120 7" stroke-linecap="round"/>
-            <circle cx="135" cy="7" r="3" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon why-icon-1">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-              <rect x="6" y="10" width="36" height="28" rx="2"/>
-              <path d="M6 16h36" stroke-width="1"/>
-              <circle cx="10" cy="13" r="0.8" fill="currentColor"/>
-              <circle cx="13" cy="13" r="0.8" fill="currentColor"/>
-              <circle cx="16" cy="13" r="0.8" fill="currentColor"/>
-              <path d="M13 23 l-4 4 4 4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M35 23 l4 4 -4 4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M27 22 l-6 10" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>We don't use templates.</h3>
-          <p>Every site is written from an empty file. Your brand, your words, your structure — shaped around your business, not squeezed into someone else's theme.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon why-icon-2">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-              <path d="M8 14 C 8 11, 10 9, 13 9 L 30 9 C 33 9, 35 11, 35 14 L 35 24 C 35 27, 33 29, 30 29 L 17 29 L 10 35 L 12 29 L 13 29 C 10 29, 8 27, 8 24 Z"/>
-              <path d="M15 19 h 13" stroke-linecap="round"/>
-              <path d="M15 23 h 8" stroke-linecap="round"/>
-              <circle cx="37" cy="33" r="6" fill="currentColor" stroke="none" opacity="0.15"/>
-              <path d="M34 33 l 2 2 4 -4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
-            </svg>
-          </div>
-          <h3>You message, we fix it.</h3>
-          <p>Send a message. Get a change. No tickets, no platforms, no waiting in a queue. Most updates go live the same day you ask.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon why-icon-3">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-              <path d="M30 8 L 38 16 L 18 36 L 10 36 L 10 28 Z" stroke-linejoin="round"/>
-              <path d="M26 12 L 34 20" stroke-linecap="round"/>
-              <path d="M10 36 L 4 42" stroke-linecap="round"/>
-              <circle cx="39" cy="10" r="1.5" fill="currentColor" stroke="none"/>
-              <circle cx="42" cy="15" r="1" fill="currentColor" stroke="none"/>
-              <circle cx="36" cy="5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <h3>Built like it should be.</h3>
-          <p>Clean code. Lightning fast. Accessible. SEO-ready out of the box. The kind of site that makes other developers open the inspector and go "huh, nice."</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon why-icon-4">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-              <rect x="10" y="14" width="28" height="22" rx="2"/>
-              <path d="M16 14 L 16 10 C 16 8, 18 6, 20 6 L 28 6 C 30 6, 32 8, 32 10 L 32 14" stroke-linecap="round"/>
-              <path d="M17 24 L 22 29 L 31 20" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="24" cy="10" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <h3>You own all of it.</h3>
-          <p>You own the code, the domain, the content — all of it. No platform lock-in, no "our builder, our rules." Walk away with everything whenever you want.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- WHY CLICKMAX -->
+  <!-- VERSUS WORDPRESS -->
   <section class="versus">
     <div class="wrap">
-      <div class="section-head versus-head">
+      <div class="section-head versus-head reveal">
         <h2>Custom-coded vs <em>WordPress.</em></h2>
         <p class="section-lede">Most small business sites are still built on WordPress. Here's why we don't, and what you actually get when a site is written from scratch instead.</p>
       </div>
 
-      <div class="versus-table">
+      <div class="versus-table reveal">
         <div class="versus-row versus-row-head">
           <div class="versus-cell versus-cell-label"></div>
           <div class="versus-cell versus-col-wp">
@@ -854,50 +414,164 @@
         </div>
       </div>
 
-      <p class="versus-footnote">If you've already got a WordPress site you want migrated to a faster, lower-maintenance build — we can do that too.</p>
-
-      <div class="versus-leave">
-        <div class="versus-leave-label">No lock-in, ever</div>
-        <h3>And if it's ever not working out?</h3>
-        <p>Cancel anytime. You keep the code, the domain, the content — the lot. Your site is plain HTML and CSS, so any web developer in the world can take over from where we left off. We'll even hand it over cleanly with a handover doc if you ever want to walk. Most clients stay because the service is good, not because they're stuck.</p>
-      </div>
+      <p class="versus-footnote reveal">If you've already got a WordPress site you want migrated to a faster, lower-maintenance build — we can do that too.</p>
     </div>
   </section>
 
-  <section class="testimonials">
+  <section class="why">
     <div class="wrap">
-      <div class="testimonial-feature">
-        <div class="testimonial-feature-quote">
-          <svg class="testimonial-mark" viewBox="0 0 48 36" fill="currentColor" aria-hidden="true">
-            <path d="M0 36V20C0 8.95 8.95 0 20 0v6C11.72 6 6 11.72 6 20h14v16H0zm28 0V20C28 8.95 36.95 0 48 0v6c-8.28 0-14 5.72-14 14h14v16H28z"/>
-          </svg>
-          <p>Honestly I was dreading the whole process of getting a website. Turns out, it was nothing like I thought it would be. I told them what I wanted, answered a few questions, and a few days later it was done. Now when I need something changed I just message and it happens the same day.</p>
-          <footer>
-            <div class="testimonial-logo testimonial-logo-afa">
-              <span>AFA</span>
-            </div>
-            <div>
-              <strong>Jade</strong>
-              <span>Owner, Angel Face Aesthetics</span>
-            </div>
-          </footer>
+      <div class="why-head reveal">
+        <div class="why-eyebrow">Why Clickmax</div>
+        <h2>For business owners who'd rather serve customers than wrestle with their website.</h2>
+        <p class="why-lede">Most small business sites are built on WordPress, half-finished by a relative, or stitched together from a Wix template. Then they break, slow down, and quietly cost you customers. We do the opposite — write every line ourselves, and look after it forever.</p>
+      </div>
+      <div class="why-grid reveal reveal-stagger">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="10" width="36" height="28" rx="2"/>
+              <path d="M6 16h36" stroke-width="1"/>
+              <circle cx="10" cy="13" r="0.8" fill="currentColor"/>
+              <circle cx="13" cy="13" r="0.8" fill="currentColor"/>
+              <circle cx="16" cy="13" r="0.8" fill="currentColor"/>
+              <path d="M13 23 l-4 4 4 4"/>
+              <path d="M35 23 l4 4 -4 4"/>
+              <path d="M27 22 l-6 10"/>
+            </svg>
+          </div>
+          <h3>We don't use templates.</h3>
+          <p>Every site is written from an empty file. Your brand, your words, your structure — shaped around your business, not squeezed into someone else's theme.</p>
         </div>
-        <div class="testimonial-aside">
-          <p class="testimonial-aside-label">Want to see more?</p>
-          <p class="testimonial-aside-body">We're only a year in and our gallery's the best proof of what we do. Have a look through recent builds and the stories behind them.</p>
-          <a href="gallery.html" class="btn btn-ghost">See the work →</a>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 14 C 8 11, 10 9, 13 9 L 30 9 C 33 9, 35 11, 35 14 L 35 24 C 35 27, 33 29, 30 29 L 17 29 L 10 35 L 12 29 L 13 29 C 10 29, 8 27, 8 24 Z"/>
+              <path d="M15 19 h 13"/>
+              <path d="M15 23 h 8"/>
+              <circle cx="37" cy="33" r="6" fill="currentColor" stroke="none" opacity="0.15"/>
+              <path d="M34 33 l 2 2 4 -4" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <h3>You message, we fix it.</h3>
+          <p>Send a message. Get a change. No tickets, no platforms, no waiting in a queue. Most updates go live the same day you ask.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M30 8 L 38 16 L 18 36 L 10 36 L 10 28 Z" stroke-linejoin="round"/>
+              <path d="M26 12 L 34 20"/>
+              <path d="M10 36 L 4 42"/>
+              <circle cx="39" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="42" cy="15" r="1" fill="currentColor" stroke="none"/>
+              <circle cx="36" cy="5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3>Built like it should be.</h3>
+          <p>Clean code. Lightning fast. Accessible. SEO-ready out of the box. The kind of site that makes other developers open the inspector and go "huh, nice."</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="10" y="14" width="28" height="22" rx="2"/>
+              <path d="M16 14 L 16 10 C 16 8, 18 6, 20 6 L 28 6 C 30 6, 32 8, 32 10 L 32 14"/>
+              <path d="M17 24 L 22 29 L 31 20"/>
+              <circle cx="24" cy="10" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3>You own all of it.</h3>
+          <p>You own the code, the domain, the content — all of it. No platform lock-in, no "our builder, our rules." Walk away with everything whenever you want.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="wrap">
+      <div class="process-head reveal">
+        <div class="process-eyebrow">Our process</div>
+        <h2>Simple process. <em>Serious results.</em></h2>
+      </div>
+      <div class="process-steps reveal" id="processSteps">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <div class="process-step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="24" cy="20" r="10"/>
+              <path d="M12 40c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
+            </svg>
+          </div>
+          <h3>Discover</h3>
+          <p>We learn about your business, your goals, and your customers.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <div class="process-step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 36L8 40l4-16 16-16 8 8L20 32z" stroke-linejoin="round"/>
+              <path d="M28 12l8 8"/>
+              <path d="M8 40l16-16"/>
+            </svg>
+          </div>
+          <h3>Plan</h3>
+          <p>We map the structure, content and strategy that will convert.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <div class="process-step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="8" y="10" width="32" height="28" rx="2"/>
+              <path d="M8 16h32" stroke-width="1"/>
+              <path d="M17 24l-4 4 4 4"/>
+              <path d="M31 24l4 4-4 4"/>
+              <path d="M26 22l-4 8"/>
+            </svg>
+          </div>
+          <h3>Build</h3>
+          <p>We code everything by hand. Fast, clean, secure.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="process-step-num">4</div>
+          <div class="process-step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M24 6l4 8 9 1-6.5 6.5 1.5 9L24 26l-8 4.5 1.5-9L11 15l9-1z" stroke-linejoin="round"/>
+              <path d="M8 38l8-8M34 34l6 6"/>
+            </svg>
+          </div>
+          <h3>Launch</h3>
+          <p>We test, optimise and launch with everything in place.</p>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="process-step-num">5</div>
+          <div class="process-step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="8,36 18,22 26,28 38,12"/>
+              <polyline points="32,12 38,12 38,18"/>
+            </svg>
+          </div>
+          <h3>Grow</h3>
+          <p>We support, update and help you keep getting better results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
   <section class="cta-band">
     <div class="wrap cta-inner">
-      <div>
-        <h2>Hand it over.<br>Get on with running your business.</h2>
-        <p>Tell us about what you do — we'll put together a site you're proud to send people to.</p>
+      <div class="cta-band-copy reveal">
+        <h2>Ready to get more clicks,<br>more customers and max results?</h2>
+        <p>Let's build a website that drives real growth for your business.</p>
+        <div class="cta-band-trust">
+          <span>✓ No lock-in contracts</span>
+          <span>✓ Cancel anytime</span>
+        </div>
       </div>
-      <a href="contact.html" class="btn btn-primary btn-lg">Book a call →</a>
+      <a href="contact.html" class="btn btn-cta btn-lg">Get Started →</a>
     </div>
   </section>
 
@@ -934,7 +608,6 @@
   </div>
 </footer>
 
-
 <script src="js/main.js"></script>
 <script>
 (function(){
@@ -949,10 +622,8 @@
       var fillEl = stat.querySelector('.spec-stat-fill');
       var target = parseInt(numEl.getAttribute('data-target'), 10);
       var width = parseInt(fillEl.getAttribute('data-width'), 10);
-      // bar
       setTimeout(function() { fillEl.style.width = width + '%'; }, 100);
-      // counter
-      var start = 0, duration = 1200, startTime = null;
+      var duration = 1200, startTime = null;
       function step(ts) {
         if (!startTime) startTime = ts;
         var prog = Math.min((ts - startTime) / duration, 1);
@@ -969,9 +640,7 @@
       entries.forEach(function(e) { if (e.isIntersecting) { runCounters(); io.disconnect(); } });
     }, { threshold: 0.3 });
     io.observe(document.querySelector('.spec-stats'));
-  } else {
-    runCounters();
-  }
+  } else { runCounters(); }
 })();
 </script>
 <script>
@@ -996,217 +665,10 @@
 </script>
 <script>
 (function(){
-  var typed    = document.getElementById('hleTyped');
-  var gutter   = document.getElementById('hleGutter');
-  var scroll   = document.getElementById('hleScroll');
-  var preview  = document.getElementById('hlePreview');
-  var viewport = document.getElementById('hleViewport');
-  var urlBar   = document.getElementById('hleUrl');
-  var statusMode = document.getElementById('hleStatusMode');
-  var statusLine = document.getElementById('hleStatusLine');
-  var statusMsg  = document.getElementById('hleStatusMsg');
-  if (!typed) return;
-
-  var CURSOR_HTML = '<span class="hle-cursor" id="hleCursor"></span>';
-
-  function setTyped(html) {
-    typed.innerHTML = html + CURSOR_HTML;
-  }
-
-  var LINES = [
-    { r: '<span class="hc">&lt;!DOCTYPE html&gt;</span>', p: '<!DOCTYPE html>' },
-    { r: '<span class="ht">&lt;html</span> <span class="ha">lang</span>=<span class="hs">"en"</span><span class="ht">&gt;</span>', p: '<html lang="en">' },
-    { r: '<span class="ht">&lt;head&gt;</span>', p: '<head>' },
-    { r: '  <span class="ht">&lt;meta</span> <span class="ha">charset</span>=<span class="hs">"UTF-8"</span><span class="ht">&gt;</span>', p: '  <meta charset="UTF-8">' },
-    { r: '  <span class="ht">&lt;title&gt;</span>Lumière Aesthetics<span class="ht">&lt;/title&gt;</span>', p: '  <title>Lumière Aesthetics</title>' },
-    { r: '  <span class="ht">&lt;link</span> <span class="ha">rel</span>=<span class="hs">"stylesheet"</span> <span class="ha">href</span>=<span class="hs">"css/style.css"</span><span class="ht">&gt;</span>', p: '  <link rel="stylesheet" href="css/style.css">' },
-    { r: '<span class="ht">&lt;/head&gt;</span>', p: '</head>' },
-    { r: '<span class="ht">&lt;body&gt;</span>', p: '<body>' },
-    { r: '', p: '' },
-    { r: '<span class="hc">&lt;!-- Navigation --&gt;</span>', p: '<!-- Navigation -->' },
-    { r: '<span class="ht">&lt;header</span> <span class="ha">class</span>=<span class="hs">"site-header"</span><span class="ht">&gt;</span>', p: '<header class="site-header">' },
-    { r: '  <span class="ht">&lt;a</span> <span class="ha">class</span>=<span class="hs">"logo"</span><span class="ht">&gt;</span>Lumière<span class="ht">&lt;/a&gt;</span>', p: '  <a class="logo">Lumière</a>' },
-    { r: '  <span class="ht">&lt;nav&gt;</span>', p: '  <nav>' },
-    { r: '    <span class="ht">&lt;a</span> <span class="ha">href</span>=<span class="hs">"#treatments"</span><span class="ht">&gt;</span>Treatments<span class="ht">&lt;/a&gt;</span>', p: '    <a href="#treatments">Treatments</a>' },
-    { r: '    <span class="ht">&lt;a</span> <span class="ha">href</span>=<span class="hs">"#about"</span><span class="ht">&gt;</span>About<span class="ht">&lt;/a&gt;</span>', p: '    <a href="#about">About</a>' },
-    { r: '    <span class="ht">&lt;a</span> <span class="ha">href</span>=<span class="hs">"#results"</span><span class="ht">&gt;</span>Results<span class="ht">&lt;/a&gt;</span>', p: '    <a href="#results">Results</a>' },
-    { r: '    <span class="ht">&lt;a</span> <span class="ha">href</span>=<span class="hs">"#book"</span> <span class="ha">class</span>=<span class="hs">"btn"</span><span class="ht">&gt;</span>Book now<span class="ht">&lt;/a&gt;</span>', p: '    <a href="#book" class="btn">Book now</a>' },
-    { r: '  <span class="ht">&lt;/nav&gt;</span>', p: '  </nav>' },
-    { r: '<span class="ht">&lt;/header&gt;</span>', p: '</header>' },
-    { r: '', p: '' },
-    { r: '<span class="hc">&lt;!-- Hero --&gt;</span>', p: '<!-- Hero -->' },
-    { r: '<span class="ht">&lt;section</span> <span class="ha">class</span>=<span class="hs">"hero"</span><span class="ht">&gt;</span>', p: '<section class="hero">' },
-    { r: '  <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"hero-image"</span><span class="ht">&gt;&lt;/div&gt;</span>', p: '  <div class="hero-image"></div>' },
-    { r: '  <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"hero-content"</span><span class="ht">&gt;</span>', p: '  <div class="hero-content">' },
-    { r: '    <span class="ht">&lt;span</span> <span class="ha">class</span>=<span class="hs">"eyebrow"</span><span class="ht">&gt;</span>', p: '    <span class="eyebrow">' },
-    { r: '      Cosmetic aesthetics · Melbourne', p: '      Cosmetic aesthetics · Melbourne' },
-    { r: '    <span class="ht">&lt;/span&gt;</span>', p: '    </span>' },
-    { r: '    <span class="ht">&lt;h1&gt;</span>', p: '    <h1>' },
-    { r: '      Refined beauty,', p: '      Refined beauty,' },
-    { r: '      <span class="ht">&lt;em&gt;</span>naturally yours.<span class="ht">&lt;/em&gt;</span>', p: '      <em>naturally yours.</em>' },
-    { r: '    <span class="ht">&lt;/h1&gt;</span>', p: '    </h1>' },
-    { r: '    <span class="ht">&lt;p&gt;</span>', p: '    <p>' },
-    { r: '      Evidence-based treatments', p: '      Evidence-based treatments' },
-    { r: '      by qualified practitioners.', p: '      by qualified practitioners.' },
-    { r: '      Subtle, considered results.', p: '      Subtle, considered results.' },
-    { r: '    <span class="ht">&lt;/p&gt;</span>', p: '    </p>' },
-    { r: '    <span class="ht">&lt;a</span> <span class="ha">class</span>=<span class="hs">"btn btn-primary"</span><span class="ht">&gt;</span>', p: '    <a class="btn btn-primary">' },
-    { r: '      Book a consult →', p: '      Book a consult →' },
-    { r: '    <span class="ht">&lt;/a&gt;</span>', p: '    </a>' },
-    { r: '  <span class="ht">&lt;/div&gt;</span>', p: '  </div>' },
-    { r: '<span class="ht">&lt;/section&gt;</span>', p: '</section>' },
-    { r: '', p: '' },
-    { r: '<span class="hc">&lt;!-- Treatments --&gt;</span>', p: '<!-- Treatments -->' },
-    { r: '<span class="ht">&lt;section</span> <span class="ha">class</span>=<span class="hs">"treatments"</span><span class="ht">&gt;</span>', p: '<section class="treatments">' },
-    { r: '  <span class="ht">&lt;span</span> <span class="ha">class</span>=<span class="hs">"eyebrow"</span><span class="ht">&gt;</span>Our treatments<span class="ht">&lt;/span&gt;</span>', p: '  <span class="eyebrow">Our treatments</span>' },
-    { r: '  <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"treatment-grid"</span><span class="ht">&gt;</span>', p: '  <div class="treatment-grid">' },
-    { r: '    <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"card"</span><span class="ht">&gt;</span>', p: '    <div class="card">' },
-    { r: '      <span class="ht">&lt;h3&gt;</span>Anti-wrinkle<span class="ht">&lt;/h3&gt;</span>', p: '      <h3>Anti-wrinkle</h3>' },
-    { r: '      <span class="ht">&lt;p&gt;</span>Softening fine lines<span class="ht">&lt;/p&gt;</span>', p: '      <p>Softening fine lines</p>' },
-    { r: '    <span class="ht">&lt;/div&gt;</span>', p: '    </div>' },
-    { r: '    <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"card"</span><span class="ht">&gt;</span>', p: '    <div class="card">' },
-    { r: '      <span class="ht">&lt;h3&gt;</span>Filler<span class="ht">&lt;/h3&gt;</span>', p: '      <h3>Filler</h3>' },
-    { r: '      <span class="ht">&lt;p&gt;</span>Volume &amp; contour<span class="ht">&lt;/p&gt;</span>', p: '      <p>Volume &amp; contour</p>' },
-    { r: '    <span class="ht">&lt;/div&gt;</span>', p: '    </div>' },
-    { r: '    <span class="ht">&lt;div</span> <span class="ha">class</span>=<span class="hs">"card"</span><span class="ht">&gt;</span>', p: '    <div class="card">' },
-    { r: '      <span class="ht">&lt;h3&gt;</span>Skin<span class="ht">&lt;/h3&gt;</span>', p: '      <h3>Skin</h3>' },
-    { r: '      <span class="ht">&lt;p&gt;</span>Peels &amp; lasers<span class="ht">&lt;/p&gt;</span>', p: '      <p>Peels &amp; lasers</p>' },
-    { r: '    <span class="ht">&lt;/div&gt;</span>', p: '    </div>' },
-    { r: '  <span class="ht">&lt;/div&gt;</span>', p: '  </div>' },
-    { r: '<span class="ht">&lt;/section&gt;</span>', p: '</section>' },
-    { r: '', p: '' },
-    { r: '<span class="ht">&lt;/body&gt;</span>', p: '</body>' },
-    { r: '<span class="ht">&lt;/html&gt;</span>', p: '</html>' },
-  ];
-
-  var lineIndex = 0;
-  var charIndex = 0;
-  var renderedHTML = '';
-  var lineCount = 0;
-  var done = false;
-
-  function rebuildGutter(n) {
-    var html = '';
-    for (var i = 1; i <= n; i++) {
-      html += '<div class="hle-gutter-num' + (i === n ? ' active' : '') + '">' + i + '</div>';
-    }
-    gutter.innerHTML = html;
-  }
-
-  function smoothScrollToBottom() {
-    var target = scroll.scrollHeight - scroll.clientHeight;
-    var start = scroll.scrollTop;
-    var dist = target - start;
-    if (dist <= 0) return;
-    var duration = Math.min(dist * 3, 400);
-    var startTime = null;
-    function step(ts) {
-      if (!startTime) startTime = ts;
-      var prog = Math.min((ts - startTime) / duration, 1);
-      var ease = 1 - Math.pow(1 - prog, 3);
-      scroll.scrollTop = start + dist * ease;
-      if (prog < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  function revealRich(rich, plain, count) {
-    var result = '';
-    var seen = 0;
-    var i = 0;
-    while (i < rich.length && seen < count) {
-      if (rich[i] === '<') {
-        var close = rich.indexOf('>', i);
-        if (close === -1) break;
-        result += rich.substring(i, close + 1);
-        i = close + 1;
-      } else if (rich[i] === '&') {
-        var semi = rich.indexOf(';', i);
-        if (semi === -1) { result += rich[i]; seen++; i++; }
-        else { result += rich.substring(i, semi + 1); seen++; i = semi + 1; }
-      } else {
-        result += rich[i]; seen++; i++;
-      }
-    }
-    var opens = (result.match(/<span/g) || []).length;
-    var closes = (result.match(/<\/span>/g) || []).length;
-    for (var s = 0; s < opens - closes; s++) result += '</span>';
-    return result;
-  }
-
-  function speed(plain, idx) {
-    var c = plain[idx] || '';
-    if (c === ' ') return 35 + Math.random() * 25;
-    if (c === '>' || c === '<') return 65 + Math.random() * 45;
-    if (c === '"') return 30 + Math.random() * 20;
-    return 42 + Math.random() * 48;
-  }
-
-  function typeStep() {
-    if (done) return;
-    if (lineIndex >= LINES.length) {
-      // End of code reached — smooth fade out, clear, restart
-      var fadeOut = 0;
-      var fadeTimer = setInterval(function() {
-        fadeOut += 0.06;
-        scroll.style.opacity = Math.max(0, 1 - fadeOut);
-        gutter.style.opacity = Math.max(0, 1 - fadeOut);
-        if (fadeOut >= 1) {
-          clearInterval(fadeTimer);
-          lineIndex = 0; charIndex = 0;
-          renderedHTML = ''; lineCount = 0; done = false;
-          setTyped('');
-          gutter.innerHTML = '<div class="hle-gutter-num active">1</div>';
-          scroll.scrollTop = 0;
-          if (statusLine) statusLine.textContent = 'Ln 1, Col 1';
-          // fade back in
-          var fadeIn = 0;
-          var fadeInTimer = setInterval(function() {
-            fadeIn += 0.08;
-            scroll.style.opacity = Math.min(1, fadeIn);
-            gutter.style.opacity = Math.min(1, fadeIn);
-            if (fadeIn >= 1) {
-              clearInterval(fadeInTimer);
-              setTimeout(typeStep, 300);
-            }
-          }, 20);
-        }
-      }, 20);
-      return;
-    }
-    var line = LINES[lineIndex];
-    if (charIndex < line.p.length) {
-      charIndex++;
-      setTyped(renderedHTML + revealRich(line.r, line.p, charIndex));
-      if (statusLine) statusLine.textContent = 'Ln ' + (lineCount + 1) + ', Col ' + charIndex;
-      smoothScrollToBottom();
-      setTimeout(typeStep, speed(line.p, charIndex - 1));
-    } else {
-      renderedHTML += line.r + '\n';
-      lineCount++;
-      rebuildGutter(lineCount);
-      setTyped(renderedHTML);
-      lineIndex++;
-      charIndex = 0;
-      var pause = line.p === '' ? 130 : line.p.trim().startsWith('<!--') ? 220 : line.p.trim().startsWith('</') ? 60 : 95;
-      setTimeout(typeStep, pause);
-    }
-  }
-
-  rebuildGutter(1);
-  setTyped('');
-  setTimeout(typeStep, 1000);
-})();
-</script>
-</script>
-<script>
-(function(){
   const steps = document.querySelectorAll('.any-size-step');
   if(!steps.length) return;
-
   let i = 0;
   steps[0].classList.add('is-active');
-
   setInterval(() => {
     steps[i].classList.remove('is-active');
     i = (i + 1) % steps.length;
@@ -1214,5 +676,71 @@
   }, 2400);
 })();
 </script>
+<script>
+/* Scroll-triggered reveals */
+(function(){
+  var revealEls = document.querySelectorAll('.reveal');
+  if (!revealEls.length || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+/* Process — sequential step lighting */
+(function(){
+  var stepsContainer = document.getElementById('processSteps');
+  if (!stepsContainer) return;
+  var steps = stepsContainer.querySelectorAll('.process-step');
+  if (!steps.length) return;
+
+  var hasRun = false;
+  function runSequence() {
+    if (hasRun) return;
+    hasRun = true;
+    steps.forEach(function(step, i) {
+      setTimeout(function() {
+        step.classList.add('is-lit');
+      }, 400 + i * 350);
+    });
+    // After the last step, loop softly: dim all and restart after a pause
+    setTimeout(function() {
+      var loop = function() {
+        steps.forEach(function(step){ step.classList.remove('is-lit'); });
+        steps.forEach(function(step, i){
+          setTimeout(function(){ step.classList.add('is-lit'); }, 300 + i * 350);
+        });
+        setTimeout(loop, 5000);
+      };
+      setTimeout(loop, 3000);
+    }, 400 + steps.length * 350);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          runSequence();
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(stepsContainer);
+  } else {
+    runSequence();
+  }
+})();
+</script>
+
 </body>
 </html>
