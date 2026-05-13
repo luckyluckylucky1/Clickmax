@@ -102,6 +102,8 @@ a { color: inherit; text-decoration: none; }
   font-size: 16.5px;
 }
 
+.nav-links-cta { display: none; }
+
 .nav-links a {
   color: var(--muted);
   transition: color .15s ease;
@@ -1882,6 +1884,14 @@ section.how, section.why, section.cta-band {
   .nav-links a.active::after { display: none; }
   .nav-links a:not(.active)::after { display: none; }
   .nav-cta { display: none; }
+  .nav-links-cta {
+    display: inline-flex;
+    margin-top: 16px;
+    justify-content: center;
+    text-align: center;
+    border-bottom: none !important;
+    font-weight: 600 !important;
+  }
   .nav-toggle { display: flex; }
 
   .nav-dropdown { width: 100%; }
