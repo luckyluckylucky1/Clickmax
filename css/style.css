@@ -1862,6 +1862,7 @@ section.how, section.why, section.cta-band {
     top: calc(20px + 64px + 12px);
     left: clamp(20px, 5vw, 56px);
     right: clamp(20px, 5vw, 56px);
+    transform: none;
     flex-direction: column;
     gap: 0;
     padding: 16px 24px 20px;
