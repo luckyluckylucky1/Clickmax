@@ -1891,6 +1891,7 @@ section.how, section.why, section.cta-band {
     text-align: center;
     border-bottom: none !important;
     font-weight: 600 !important;
+    color: var(--white) !important;
   }
   .nav-toggle { display: flex; }
 
