@@ -1858,10 +1858,10 @@ section.how, section.why, section.cta-band {
 
   .nav-links {
     display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    right: 0;
+    position: fixed;
+    top: calc(20px + 64px + 12px);
+    left: clamp(20px, 5vw, 56px);
+    right: clamp(20px, 5vw, 56px);
     flex-direction: column;
     gap: 0;
     padding: 16px 24px 20px;
@@ -1871,6 +1871,9 @@ section.how, section.why, section.cta-band {
     box-shadow: 0 12px 40px rgba(15,16,32,0.16);
     margin-left: 0;
     margin-right: 0;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    z-index: 200;
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 0; font-size: 17.5px; border-bottom: 1px solid var(--line); color: var(--ink); font-weight: 500; }
@@ -2117,15 +2120,34 @@ section.how, section.why, section.cta-band {
   .versus-cell-label {
     border-right: none;
     border-bottom: 1px solid var(--line);
-    padding-block: 12px;
+    padding-block: 14px;
     font-size: 14.5px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    background: var(--surface);
+    font-weight: 600;
+    color: var(--ink);
   }
-  .versus-cell-wp {
+  .versus-cell-wp,
+  .versus-cell-us {
     border-right: none;
     border-bottom: 1px solid var(--line);
+    padding-block: 14px;
+    padding-left: 56px;
   }
+  .versus-cell-wp::after,
+  .versus-cell-us::after {
+    content: attr(data-col);
+    display: block;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .versus-cell-wp::after { color: #dc2626; }
+  .versus-cell-us::after { color: var(--indigo); }
   .versus-row-head {
     display: none;
   }
@@ -2802,6 +2824,7 @@ section.how, section.why, section.cta-band {
 /* Speed chart */
 .hk-chart {
   margin-top: auto;
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2830,6 +2853,7 @@ section.how, section.why, section.cta-band {
   display: flex;
   align-items: flex-end;
   height: 110px;
+  position: relative;
 }
 
 .hk-bar {
@@ -2838,6 +2862,7 @@ section.how, section.why, section.cta-band {
   border-radius: 6px 6px 2px 2px;
   transition: height 1s cubic-bezier(.2,.7,.2,1);
   background: rgba(255,255,255,0.12);
+  position: relative;
 }
 
 .hk-bar-us {
@@ -2853,7 +2878,8 @@ section.how, section.why, section.cta-band {
 
 .hk-bar-badge {
   position: absolute;
-  top: 0;
+  bottom: 100%;
+  margin-bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--coral);
@@ -2865,6 +2891,7 @@ section.how, section.why, section.cta-band {
   padding: 3px 8px;
   border-radius: 4px;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .hk-bar-badge::after {
