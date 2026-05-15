@@ -2146,6 +2146,12 @@ section.how, section.why, section.cta-band {
     border-bottom: 1px solid var(--line);
     padding-block: 14px;
     padding-left: 56px;
+    padding-right: 16px;
+  }
+  .versus-cell-wp::before,
+  .versus-cell-us::before {
+    top: 18px;
+    transform: none;
   }
   .versus-cell-wp::after,
   .versus-cell-us::after {
