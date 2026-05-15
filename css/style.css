@@ -2147,6 +2147,9 @@ section.how, section.why, section.cta-band {
     padding-block: 14px;
     padding-left: 56px;
     padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .versus-cell-wp::before,
   .versus-cell-us::before {
